@@ -1,0 +1,101 @@
+/* sidebar nav css  */
+
+.loginImg{
+    padding-top: 80px;
+    width: 90%;
+}
+.loginForm{
+    margin-top: 80px;
+    padding: 30px 30px;
+    background-color:#2D5F2E;
+    color: white;
+    border-radius: 100px 100px 0 0;
+}
+/* sidebar nav css starts  */
+.sideBarNav{
+    background-color: #2D5F2E;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+}
+.sidebar{
+    float: left;
+}
+.table tr{
+    padding-bottom: 120px;
+}
+.mySideBarNav a{
+    color: white;
+    text-decoration: none;
+}
+.LSC{
+    margin-top: 40px;
+}
+.nav{
+    margin-top: 50px;
+}
+.CreatedBy{
+    margin-top: 20px;
+    padding:10px;
+}
+
+
+/* home css  */
+
+.topSections{
+    padding-top: 80px;
+    padding-left: 20px;
+}
+
+.downSection{
+    margin-top: 60px;
+    padding: 20px;
+}
+.cardRow{
+    margin-top: 20px;
+}
+
+.card{
+    padding:12px;
+    color: white;
+    height: 140px;
+}
+.cardHeading{
+    font-size: 60px;
+}
+.cardIcons{
+    position: absolute;
+    margin-left: 70%;
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.card1{
+    background-color: #EF476F;
+    border: none;
+}
+
+.card2{
+    background-color: #FFD166;
+    border: none;
+    color: black;
+}
+.card3{
+    background-color: #06D6A0;
+    border: none;
+}
+.card4{
+    background-color: #118AB2;
+    border:none;
+}
+.cardA{
+    text-decoration: none;
+}
+.cardA:hover{
+    text-decoration: none;
+}
+
+
+/* navigation css  */

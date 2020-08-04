@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.headerTop{
+    margin-top: 20px;
+}
+
+.socialIcons{
+    display: block;
+    float: right;
+    margin-top: -50px;
+    
+}
+
+.socialIcons li{
+    list-style-type: none;
+    text-decoration: none;
+    float: left;
+    padding-right: 20px;
+}
+.socialIcons li i{
+    font-size: 25px;
+    color:#2D5F2E;
+}
+
+.customButtonTop{
+    border: solid 2px #2D5F2E;
+    border-radius: 4px;
+    background-color: white;
+    color: #2D5F2E;
+    padding: 4px 14px;
+    margin-right: 10px;
+}
+
+.customButtonTop:hover{
+    background-color: #2D5F2E;
+    color: white;
+    transition-duration: 0.5s;
+}
+
+.headerBottom{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #2D5F2E;
+    margin-top: 20px;
+}
+.navbar-brand{
+    display: none;
+}
+.navigationMenu{
+    width: 100%;
+}
+.navbar{
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding:10px 40px;
+    background-color: #2D5F2E;
+}
+.nav-link{
+    color: white;
+}
+
+@media screen and (max-width:768px){
+    .socialIcons{
+        display: none;
+    }
+    .checkbtn{
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+    }
+    .navbar-brand{
+        display: block;
+    }
+    
+}
