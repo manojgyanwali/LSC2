@@ -125,7 +125,7 @@ $result10->execute();
   </ul>
 </nav>
 
-<div>
+<div class="footer">
     <?php include('footer.html') ?>
 </div>
 

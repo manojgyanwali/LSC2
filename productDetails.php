@@ -42,7 +42,7 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
             <!-- The expanding image container -->
                 <div class="container img-container">
                     <!-- Expanded image -->
-                    <img id="expandedImg" style="width:100%"  src="product_portfolio_image/<?php echo $data['product_image']; ?>">
+                    <img id="expandedImg"  src="product_portfolio_image/<?php echo $data['product_image']; ?>" style="width:100%; height:350px;">
                 </div>
 
                                                 
@@ -50,16 +50,16 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
                     <div class="container sample-img">
                         <div class="row">
                             <div class="col-md-3 col-3">
-                                <img src="product_portfolio_image/<?php echo $data['sub_image1']; ?>" alt="" class="img-fluid" onclick="myFunction(this);">
+                                <img src="product_portfolio_image/<?php echo $data['product_image']; ?>" style="height:80px; width:100%;" alt="" class="img-fluid" onclick="myFunction(this);">
                             </div>
                             <div class="col-md-3 col-3">
-                                <img src="product_portfolio_image/<?php echo $data['sub_image2']; ?>" alt="" class="img-fluid" onclick="myFunction(this);">
+                                <img src="product_portfolio_image/<?php echo $data['sub_image1']; ?>" style="height:80px; width:100%;" alt="" class="img-fluid" onclick="myFunction(this);">
                             </div>
                             <div class="col-md-3 col-3">
-                                <img src="product_portfolio_image/<?php echo $data['sub_image3']; ?>" alt="" class="img-fluid" onclick="myFunction(this);">
+                                <img src="product_portfolio_image/<?php echo $data['sub_image2']; ?>" style="height:80px; width:100%;" alt="" class="img-fluid" onclick="myFunction(this);">
                             </div>
                             <div class="col-md-3 col-3">
-                                <img src="product_portfolio_image/<?php echo $data['sub_image4']; ?>" alt="" class="img-fluid" onclick="myFunction(this);">
+                                <img src="product_portfolio_image/<?php echo $data['sub_image3']; ?>" style="height:80px; width:100%;" alt="" class="img-fluid" onclick="myFunction(this);">
                             </div>
                         </div>
                     </div>

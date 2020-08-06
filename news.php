@@ -93,7 +93,7 @@ $result2->execute();
                         ?>
                         <tr>
                             <td width="40%">
-                                <a href="newsDetails.php?id=<?php echo $row2['id']; ?>"><img src="images/news_and_events_images/<?php echo $row2['image']; ?>" alt="" class="img-fluid"></a>
+                                <a href="newsDetails.php?id=<?php echo $row2['id']; ?>"><img src="images/news_and_events_images/<?php echo $row2['image']; ?>" alt="" class="img-fluid" style="max-height:80px;width:100%;"></a>
                             </td>
                             <td width="60%">
                                 <a href="newsDetails.php?id=<?php echo $row2['id']?>" class="normalA"><h6 class="HeadersB">
@@ -105,21 +105,6 @@ $result2->execute();
                             </td>
                         </tr>
                         <?php } ?>
-
-                        <tr>
-                            <td width="40%">
-                                <a href="newsDetails.php"><img src="images/news.png" alt="" class="img-fluid"></a>
-                            </td>
-                            <td width="60%">
-                                <a href="newsDetails.php" class="normalA"><h6 class="HeadersB">
-                                Farmers has been 
-                                noticed about the virus 
-                                </h6></a>
-                                <small class="text-muted">
-                                <i class="far fa-clock"></i> <span>6 june, 2020</span>
-                                </small>
-                            </td>
-                        </tr>
 
                     </Table>
                 </div>
@@ -156,11 +141,11 @@ $result3->execute();
                     </div>
                     <div class="allNewsH">
                             <a href="newsDetails.php?id=<?php echo $row3['id']; ?><" class="normalA">
-                            <h3 class="HeadersB">
+                            <h5 class="HeadersB">
                             <?php echo $row3['title']; ?>
-                            </h3>                          
+                            </h5>                          
                             </a>
-                        <p class="mcf"><?php echo $row3['date']; ?></p>
+                            <i class="far fa-clock"></i> <span class="mcf"><?php echo $row3['date']; ?></span> <p></p>
                     </div>
                 </div>
             <?php } ?>
@@ -173,7 +158,7 @@ $result3->execute();
 
             
 
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="allNewsImg">
                     <img src="images/card.png" alt="">
                 </div>
@@ -183,10 +168,33 @@ $result3->execute();
                     </h3>
                     <p class="mcf">20th July, 2020</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
+
+
+<!-- pagination starts -->
+
+<nav aria-label="Page navigation example" style="margin-top:40px; margin-bottom:90px;">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="footer">
+    <?php include('footer.html') ?>
+</div>
+
 
 
 

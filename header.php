@@ -48,7 +48,7 @@ $language='nep';
     <section class="headerTop">
         <div class="container">
             <div class="logoContains">
-                <img src="images/Logo.png" alt="logo">
+                <a href="index.php"><img src="images/Logo.png" alt="logo"></a>
                 <h5>Lumbini Seed Company</h5>
             </div>
             <div class="RightContains">
@@ -88,7 +88,9 @@ $language='nep';
             <div class="container">
                 <a class="navbar-brand" href="#" style="color: white;">LSC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon" style="color: white;"></span>
+                  <span style="color:white;">
+                   <i class="fas fa-bars" style="padding-left:5px; color:white;"></i>
+                  </span>
                 </button>
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
