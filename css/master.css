@@ -1,456 +1,687 @@
  /* index css  */
 
  .HomeSlider{
-     margin-top:40px;
-     
- }
- .slider{
-     margin-bottom: 40px;
- }
- .carousalImg{
-     
-     height: 320px;
-     width: 100%;
- }
- .carousel-caption{
-    background-image: linear-gradient( rgba(255,0,0,0), rgba(0, 0, 0, 0.4));
- }
-
- .HeadersB{
-     font-weight: 600;
- }
- .headFeatures{
-     margin-top: 100px;
-     text-align: center;
- }
- .aboutSection{
-     background-color: #e5e5e5;
-     margin-top: 140px;
- }
- .aboutH{
-     padding: 80px 0 40px 0;
- }
- .aboutH p{
-     color: #2D5F2E;
- }
-
- .whiteSection{
-     background: white;
-     padding: 60px 50px;
-     border-radius: 10px;
-     box-shadow: 1px 1px 4px 2px #e5e5e5;
- }
- 
- .features{
-     margin:80px 0;
-     text-align: center;
-     padding-bottom: 80px;
- }
- .Fdescription{
-     padding: 5px;
- }
- .exploreProduct{
-     margin-top: 40px;
- }
- .cardImg{
-     height: 250px;
-     width: 100%;
-     overflow: hidden;
- }
- .cardImg img{
-     padding:0;
-     width: 100%;
-     height: 100%;
-     box-shadow: 1px 1px 4px 2px #e5e5e5;
-     border-radius: 12px 12px 12px 12px;
-     overflow: hidden;
-
- }
- .normalA{
-     color: black;
- }
- .normalA:hover{
-     text-decoration: none;
-     color: #2D5F2E;
- }
- .cardDes{
-     margin-top: 15px;
-     margin-bottom: 35px;
- }
- .cardDes p{
-     color: #2D5F2E;
- }
- .btnMaster{
-     background-color: #2D5F2E;
-     color: white;
-     padding: 10px 20px;
-     border: none;
-     border-radius: 8px;
- }
- .btnMaster:hover{
-     background-color: #1A4A1B;
-     transition: all .4s;
- }
- .profile{
-     background: #e5e5e5;
-     padding: 20px 0;
- }
- .vision{
-     margin-top: 20px;
-    background: url('../images/profile-bg.png');
- }
- .layer{
-    background-color: rgba(0, 0, 0, .7);
-    padding: 120px;
-    margin: 80px 0;
-    color: white;
-
- }
- .layer .container p{
-     margin-top: 20px;
- }
-
- .ceo .container    {
-     background-color: white;
-     padding: 40px;
-     margin-top: 80px;
-     border: none;
-     border-radius: 12px;
-     box-shadow: 1px 1px 4px 2px #e5e5e5;
- }
- .team{
-     margin-top: 80px;
- }
- .photoContainer img{
-     margin:20px;
-     height: 250px;
-     width: 250px;
-     overflow: hidden;
- }
- 
-.teamStatus{
-    text-align: center;
-    margin:20px auto;
-}
-.partners{
-    margin-top: 120px;
-}
-.partnerH h2{
-    text-align: center;
-    padding: 20px;
-}
-.partnerLogo{
-    margin-top: 50px;
+    margin-top:40px;
     
 }
+.slider{
+    margin-bottom: 40px;
+}
+.carousalImg{
+    
+    height: 320px;
+    width: 100%;
+}
+.carousel-caption{
+   background-image: linear-gradient( rgba(255,0,0,0), rgba(0, 0, 0, 0.4));
+}
 
-.PcatL ul li{
-    list-style-type:none;
-    display: inline;
-    padding-right: 10px;
+.HeadersB{
+    font-weight: 600;
 }
-.Pcat{
-    border-left: 2px solid #2D5F2E;
-    padding-left: 10px;
+.headFeatures{
+    margin-top: 100px;
+    text-align: center;
 }
-.mcf{
+.aboutSection{
+    background-color: #e5e5e5;
+    margin-top: 140px;
+}
+.aboutH{
+    padding: 80px 0 40px 0;
+}
+.aboutH p{
     color: #2D5F2E;
 }
- 
+
+.whiteSection{
+    background: white;
+    padding: 60px 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 2px #e5e5e5;
+}
+
+.features{
+    margin:80px 0;
+    text-align: center;
+    padding-bottom: 80px;
+}
+.Fdescription{
+    padding: 5px;
+}
+.exploreProduct{
+    margin-top: 40px;
+}
+.cardImg{
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+.cardImg img{
+    padding:0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 4px 2px #e5e5e5;
+    border-radius: 12px 12px 12px 12px;
+    overflow: hidden;
+
+}
+.normalA{
+    color: black;
+}
+.normalA:hover{
+    text-decoration: none;
+    color: #2D5F2E;
+}
+.cardDes{
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+.cardDes p{
+    color: #2D5F2E;
+}
+.btnMaster{
+    background-color: #2D5F2E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+}
+.btnMaster:hover{
+    background-color: #1A4A1B;
+    transition: all .4s;
+}
+.profile{
+    background: #e5e5e5;
+    padding: 20px 0;
+}
+.vision{
+    margin-top: 20px;
+   background: url('../images/profile-bg.png');
+}
+.layer{
+   background-color: rgba(0, 0, 0, .7);
+   padding: 120px;
+   margin: 80px 0;
+   color: white;
+
+}
+.layer .container p{
+    margin-top: 20px;
+}
+
+.ceo .container    {
+    background-color: white;
+    padding: 40px;
+    margin-top: 80px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 1px 1px 4px 2px #e5e5e5;
+}
+.team{
+    margin-top: 80px;
+}
+.photoContainer img{
+    margin:20px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+
+.teamStatus{
+   text-align: center;
+   margin:20px auto;
+}
+.partners{
+   margin-top: 120px;
+}
+.partnerH h2{
+   text-align: center;
+   padding: 20px;
+}
+.partnerLogo{
+   margin-top: 50px;
+   
+}
+.Gallery{
+   background: url('../images/farmers.jpg');
+   margin-top: 40px;
+}
+.galleryImg{
+   margin-top: 20px;
+}
+
+
+.PcatL ul li{
+   list-style-type:none;
+   display: inline;
+   padding-right: 10px;
+}
+.Pcat{
+   border-left: 2px solid #2D5F2E;
+   padding-left: 10px;
+}
+.mcf{
+   color: #2D5F2E;
+}
+
 
 /* product details  */
 .productDetails{
-    margin-top: 50px;
+   margin-top: 50px;
 }
 .productDetails img{
-    box-shadow: 1px 1px 4px 2px #e5e5e5;
+   box-shadow: 1px 1px 4px 2px #e5e5e5;
 }
 .sample-img{
-    margin-top: 40px;
-    margin-bottom: 20px;
+   margin-top: 40px;
+   margin-bottom: 20px;
 }
 .main{
-    margin-top:20px;
-    padding: 10px 0;
-    border-top: 1px solid rgba(107, 107, 107, 0.3);
+   margin-top:20px;
+   padding: 10px 0;
+   border-top: 1px solid rgba(107, 107, 107, 0.3);
 }
 .QTY{
-    background-color: #e5e5e5;
-    padding: 14px 20px;
-    margin-top: 10px;
+   background-color: #e5e5e5;
+   padding: 14px 20px;
+   margin-top: 10px;
 }
 .orderBtn{
-    background: #2D5F2E;
-    margin-top: 10px;
-    padding: 18px 20px;
-    width: 100%;
-    color: white;
-    letter-spacing: 5px;
-    border: 2px solid #2D5F2E;
+   background: #2D5F2E;
+   margin-top: 10px;
+   padding: 18px 20px;
+   width: 100%;
+   color: white;
+   letter-spacing: 5px;
+   border: 2px solid #2D5F2E;
 }
 .orderBtn:hover{
-    background: white;
-    color: #2D5F2E;
-    transition: all .4s;
+   background: white;
+   color: #2D5F2E;
+   transition: all .4s;
 }
 .cartBtn{
-    background: white;
-    margin-top: 10px;
-    padding: 18px 20px;
-    width: 100%;
-    color: #2D5F2E;
-    letter-spacing: 5px;
-    border: 2px solid #2D5F2E;
+   background: white;
+   margin-top: 10px;
+   padding: 18px 20px;
+   width: 100%;
+   color: #2D5F2E;
+   letter-spacing: 5px;
+   border: 2px solid #2D5F2E;
 }
 .cartBtn:hover{
-    background: #2D5F2E;
-    color: white;
-    transition: all .4s;
+   background: #2D5F2E;
+   color: white;
+   transition: all .4s;
 }
 .pbtns{
-    padding: 20px 0;
-    border-top: 1px solid rgba(107, 107, 107, 0.3);
+   padding: 20px 0;
+   border-top: 1px solid rgba(107, 107, 107, 0.3);
 }
 .codes{
-    padding: 20px 0;
-    border-top: 1px solid rgba(107, 107, 107, 0.3);
+   padding: 20px 0;
+   border-top: 1px solid rgba(107, 107, 107, 0.3);
 }
 .suggestedProduct{
-    background-color: #e5e5e5;
-    padding: 20px 0;
-    margin: 20px 0 80px 0;
+   background-color: #e5e5e5;
+   padding: 20px 0;
+   margin: 20px 0 80px 0;
 }
 
 /* product order  */
 *{
-    margin:0;
-    padding:0;
+   margin:0;
+   padding:0;
 }
 .productConfirmOrders{
-    background-color: #F2F2F2;
-    height: 110vh;
-    width: 100%;
+   background-color: #F2F2F2;
+   height: 110vh;
+   width: 100%;
 }
 
 .confirmCard{
-    background-color: white;
-    margin-top: 20px;
-    padding: 30px;
-    height: 100vh;
-    border-radius: 10px;
+   background-color: white;
+   margin-top: 20px;
+   padding: 30px;
+   height: 100vh;
+   border-radius: 10px;
 }
 
 .confirmForm{
-    margin-top: 20px;
+   margin-top: 20px;
 }
 .confirmForm label{
-    padding-top:15px;
-    padding-bottom: 5px;
+   padding-top:15px;
+   padding-bottom: 5px;
 }
 .btnConfirm{
-    background-color: #2D5F2E;
-    margin-top: 50px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: large;
-    width: 100%;
-    letter-spacing: 2px;
-    border: none;
-    padding: 10px;
+   background-color: #2D5F2E;
+   margin-top: 50px;
+   color: white;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: large;
+   width: 100%;
+   letter-spacing: 2px;
+   border: none;
+   padding: 10px;
 }
 
 .btnConfirm:hover{
-    color: white;
+   color: white;
 }
 
 .tableHead{
-    background-color: rgba(255, 255, 255, 1);
+   background-color: rgba(255, 255, 255, 1);
 }
 .tableHead th{
-    padding: 15px 0;
-    color: #2D5F2E;
+   padding: 15px 0;
+   color: #2D5F2E;
 }
 
 .tableItems{
-    background-color: white;
-    margin-top: 20px;
+   background-color: white;
+   margin-top: 20px;
 }
 
 .tableItems td{
-    padding: 20px 0;
+   padding: 20px 0;
 }
 .tableItems td img{
-    margin-left: 10px;
+   margin-left: 10px;
 }
 
 /* career startds  */
 .career{
-    background: url('../images/careerbg.png');
-    background-color: #e5e5e5;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 100vh;
-}
-.layer2{
-    background-color: rgba(0, 0, 0, .7);
+   background: url('../images/careerbg.png');
+   background-color: #e5e5e5;
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: cover;
    height: 100vh;
-
- }
- .head{
-     color: white;
-     font-weight: bolder;
-     text-align: center;
-     padding-top: 80px;
-     
- }
- .vConainer{
-     background: white;
-     margin-top: 80px;
-     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
- }
- .vh{
-     text-align: center;
-     padding-top: 60px;
- }
- .vacancy{
-     margin-top: 60px;
- }
- .vacancy .row{    
-    border-bottom: 1px solid rgba(107, 107, 107, 0.3);
-    padding-top: 10px;
-    padding-bottom: 10px;
-
- }
- .pdf{
-     float: left;
-     padding-right: 10px;
- }
- .downloadBtn{
-     background: #2D5F2E;
-     color: white;
-     padding:15px 20px;
-     border: none;
-     float: right;
-     border:none;
-     letter-spacing: 2px;
-     margin-top:10px;
- }
- .downloadBtn:hover{
-     background:#1A4A1B;
-     transition: all 0.5s;
- }
-
- /* news and event  */
-
- .headSearch{
-     margin: 50px 0 20px 0;
- }
- .highlightImg{
-     float: left;
-     padding-right: 20px;
-     width:350px;
- }
- .newsHeadP{
-    display: block;/* or inline-block */
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-    max-height: 5.6em;
-    line-height: 1.8em;
-    margin-bottom: 20px;
- }
- .subnewsImg{
-     width: 170px;
-     padding-right: 20px;
- }
- .allNews{
-     margin: 50x 0;
- }
- .allNewsType{
-     margin-bottom: 50px;
- }
- .allNewsImg img{
-    width: 100%;
-    height: 170px;
-     padding-bottom: 20px;
- }
-
- /* contact starts  */
-.contact{
-    background-color: #e5e5e5;
-    padding-bottom: 80px;
+}
+.layer2{
+   background-color: rgba(0, 0, 0, .7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
 
 }
- .contactLayer{
-    position: absolute;
-    background: rgba(0, 0, 0, .7);
-    z-index: 0;
-    height: 350px;
-    width: 100%;
+.head{
     color: white;
- }
- .contactLayer .container h2{
-     margin-top: 100px;
- }
-
- .contactCard .container .row{
-     margin-top: -8em;
-     position: relative;
-     background-color: white;
-     z-index: 1;
-     
- }
- .contactCard .container .row .col-md-8{
-     padding: 50px 50px 10px 50px;
- }
- .contactCard .container .row .col-md-8 form{
-     padding-top: 30px;
- }
- .contact-right{
-     background-color: #1A4A1B;
-     color: white;
-     padding: 50px 50px 10px 50px;
- }
- .contactInfo{
-     margin-top: 50px;
- }
- .contactInfo i{
-     padding:15px 10px;
-     font-size: 1.6em;
- }
- .contactInfo span{
-     font-size: 1.2em;
- }
- .socialMedia ul li{
-     display: inline;
-     list-style-type:none;
-     color: white;
- }
-
- /* distribution netwrork starts  */
- 
- .distribution{
-     background-color: #e5e5e5;
-     background-attachment: fixed;
- }
- .dCard{
-     background-color: white;
-     padding: 30px;
-     border-radius: 10px;
-     box-shadow: 1px 1px 4px 2px rgba(107, 107, 107, 0.3);
-     margin-bottom: 40px;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 80px;
+    
 }
-.dImg{
-    display: inline;
-    width: 150px;
+.vConainer{
+    background: white;
+    margin-top: 80px;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+}
+.vh{
+    text-align: center;
+    padding-top: 60px;
+}
+.vacancy{
+    margin-top: 60px;
+}
+.vacancy .row{    
+   border-bottom: 1px solid rgba(107, 107, 107, 0.3);
+   padding-top: 10px;
+   padding-bottom: 10px;
+
+}
+.pdf{
+    float: left;
+    padding-right: 10px;
+}
+.downloadBtn{
+    background: #2D5F2E;
+    color: white;
+    padding:15px 20px;
+    border: none;
+    float: right;
+    border:none;
+    letter-spacing: 2px;
+    margin-top:10px;
+}
+.downloadBtn:hover{
+    background:#1A4A1B;
+    transition: all 0.5s;
+}
+
+/* news and event  */
+
+.headSearch{
+    margin: 50px 0 20px 0;
+}
+.highlightImg{
+    float: left;
+    padding-right: 20px;
+    width:350px;
+}
+.newsHeadP{
+   display: block;/* or inline-block */
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   overflow: hidden;
+   max-height: 5.6em;
+   line-height: 1.8em;
+   margin-bottom: 20px;
+}
+.subnewsImg{
+    width: 170px;
     padding-right: 20px;
 }
+.allNews{
+    margin: 50x 0;
+}
+.allNewsType{
+    margin-bottom: 50px;
+}
+.allNewsImg img{
+   width: 100%;
+   height: 170px;
+    padding-bottom: 20px;
+}
+
+/* contact starts  */
+.contact{
+   background-color: #e5e5e5;
+   padding-bottom: 80px;
+
+}
+.contactLayer{
+   position: absolute;
+   background: rgba(0, 0, 0, .7);
+   z-index: 0;
+   height: 350px;
+   width: 100%;
+   color: white;
+}
+.contactLayer .container h2{
+    margin-top: 100px;
+}
+
+.contactCard .container .row{
+    margin-top: -8em;
+    position: relative;
+    background-color: white;
+    z-index: 1;
+    
+}
+.contactCard .container .row .col-md-8{
+    padding: 50px 50px 10px 50px;
+}
+.contactCard .container .row .col-md-8 form{
+    padding-top: 30px;
+}
+.contact-right{
+    background-color: #1A4A1B;
+    color: white;
+    padding: 50px 50px 10px 50px;
+}
+.contactInfo{
+    margin-top: 50px;
+}
+.contactInfo i{
+    padding:15px 10px;
+    font-size: 1.6em;
+}
+.contactInfo span{
+    font-size: 1.2em;
+}
+.socialMedia ul li{
+    display: inline;
+    list-style-type:none;
+    color: white;
+}
+
+/* distribution netwrork starts  */
+.Dcontent{
+    padding: 10px 30px;
+}
+.cardSection{
+    background-color: #e5e5e5;
+    padding: 20px 30px;
+    border-radius: 12px 12px 0 0;
+    background-attachment: fixed;
+}
+.dCard{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 2px rgba(107, 107, 107, 0.3);
+    margin-bottom: 40px;
+}
+.dImg{
+   display: inline;
+   width: 150px;
+   padding-right: 20px;
+}
 #contactBtn{
-    margin-top: 30px;
-    margin-left:0;
+   margin-top: 30px;
+   margin-left:0;
+}
+.seedFpic{
+   margin:20px 0 40px 2vw;
+   padding:0 30px;
+
+}
+.seedFpic2{
+   margin:20px 0 40px 2vw; 
+   border-left:1px solid grey; 
+   border-right:1px solid grey; 
+   padding:0 2vw;
+
+}
+.seedF{
+   text-transform:uppercase;
+   text-align:center; 
+   padding:0 30px;
+}
+.profileLeft{
+   padding-left: 140px;
+}
+
+/* reasech code starts here  */
+
+.TopResearch{
+   background-color: #e5e5e5;
+   padding: 80px 20px;
+}
+.imgR{
+   float:right;
+   width: 500px;
+   height: 300px;
+}
+
+.topP{
+   background-color: #2D5F2E;
+   padding: 5px 20px;
+   border-radius: 140px;
+   width: 200px;
+   color: white;
+}
+.topBtn{
+   border: 1px solid grey;
+   padding: 10px 20px;
+   border-radius: 8px;
+   background-color: #e5e5e5;
+   margin-top: 20px;
+   margin-bottom: 30px;
+}
+.customNextBtn{
+   background-color: #e5e5e5;
+   padding: 5px;
+   border: none;
+}
+.customPrevBtn{
+   background-color: #e5e5e5;
+   padding: 5px;
+   border: none;
+   opacity: .5;
+
+}
+.mainR{
+   margin-top: 50px;
+}
+.researchCard{
+   padding: 10px 20px;
+   border: 1px solid #e5e5e5;
+   border-radius: 8px;
+   box-shadow: 0px 0px 4px 2px #e5e5e5;
+   margin-top: 20px;
+}
+.rProgram{
+   font-weight: 600;
+}
+
+.researchCard h5{
+   font-weight: 600;
+}
+.ResearchHead1{
+   color: #2D5F2E;
+   margin-top: 30px;
+}
+.ongoingR{
+   padding: 20px 0;
+}
+.rgImg{
+   height: 250px;
+   width: 250px;
+}
+.rdetail{
+   margin-top: 40px;
+   padding: 10px 40px;
+}
+.ResearchGallery  h3{
+   padding: 20px 0;
+}
+.RealtedContent h3{
+   margin-top: 40px;
+}
+
+ /* galery code  */
+ 
+
+.gallery-container h1 {
+   text-align: center;
+   margin-top: 70px;
+   font-family: 'Droid Sans', sans-serif;
+   font-weight: bold;
+   color: #58595a;
+}
+
+.gallery-container p.page-description {
+   text-align: center;
+   margin: 30px auto;
+   font-size: 18px;
+   color: #85878c;
+}
+
+.tz-gallery {
+   padding: 40px;
+}
+
+.thumbnail {
+   padding: 0;
+   margin-bottom: 30px;
+   background-color: white;
+   border-radius: 4px;
+   border: none;
+   transition: 0.15s ease-in-out;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.thumbnail:hover {
+   transform: translateY(-10px) scale(1.02);
+}
+
+.lightbox img {
+   width: 100%;
+   border-radius: 4px 4px 0 0;
+}
+
+.caption{
+   padding: 26px 30px;
+}
+
+.caption h3 {
+   font-size: 14px;
+   font-weight: bold;
+   margin-top: 0;
+}
+
+.caption p {
+   font-size: 12px;
+   color: #7b7d7d;
+   margin: 0;
+}
+
+.baguetteBox-button {
+   background-color: transparent !important;
+}
+/* galler code / */
+
+
+
+
+@media only screen and (max-width:576px){
+   .tz-gallery {
+      padding: 5px;
+   }
+   
+   .headFeatures{
+       margin-top: 40px;
+   }
+   .seedF{
+       font-size: small;
+       padding: 0;
+   }
+   .seedFpic2{
+       width: 50px;
+       border: none;
+   }
+   .HeadersB{
+       padding:0;
+   }
+   .profileLeft{
+       padding-left: 25px;
+   }
+   .layer{
+       background-color: rgba(0, 0, 0, .7);
+       padding: 50px 20px;
+       margin: 80px 0;
+       color: white;
+   
+    }
+    .photoContainer img{
+       margin:20px 0;
+       height: 150px;
+       width: 150px;
+       overflow: hidden;
+   }
+   .downloadBtn{
+       float: none;
+   }
+   .Gallery{
+      
+       margin-top: 40px;
+       padding: 0;
+   }
+   .galleryImg{
+       height: 150px;
+   }
+   .cardSection{
+       background-color: #e5e5e5;
+       padding: 10px 0;
+       background-attachment: fixed;
+   }
+   .cardSection{
+       background-color: white;
+   }
 }

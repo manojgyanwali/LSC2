@@ -58,10 +58,18 @@ $language='nep';
                     <li><a href=""><i class="fa fa-twitter"></i></a></li>
 
 
-                    <button class="customButtonTop">Sign UP</button>
-                    <button class="customButtonTop">Log in</button>
-                    <a href="index.php?lang=en">english</a>
-                    <a href="index.php?lang=nep">nepali</a>
+                    <a href="signup.html"><button class="customButtonTop">Sign UP</button></a>
+                    <a href="login.html"><button class="customButtonTop">Log in</button></a>
+                    
+                    <button class="customButtonTop dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Language
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <a href="index.php?lang=en"><button class="dropdown-item" type="button">English</button>
+                      </a>
+                      <a href="index.php?lang=nep"><button class="dropdown-item" type="button">Nepali</button>
+                      </a>
+                    </div>
 
 
                 </ul>
@@ -117,10 +125,10 @@ $language='nep';
                         <a class="nav-link" href="news.php"style="color:white;"><?php echo $lang['news_and_events'] ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="career.php"style="color:white;"><?php echo $lang['coverage'] ?></a>
+                        <a class="nav-link" href="career.php"style="color:white;"><?php echo $lang['carrer_and_opportunities'] ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"style="color:white;"></a>
+                        <a class="nav-link" href="Research.php"style="color:white;">Research & Development</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php"style="color:white;"><?php echo $lang['contact_us'] ?></a>

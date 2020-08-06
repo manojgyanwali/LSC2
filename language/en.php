@@ -2,14 +2,14 @@
 
 
  $lang=array(
-     "home"=>"home",
-     "company_profile"=>"company profile",
-     "product_portfolio"=>"product portfolio",
-     "distribution_network"=>"distribution network",
-     "news_and_events"=>"news and events",
-     "carrer_and_opportunities"=>"carrer and opportunities",
+     "home"=>"Home",
+     "company_profile"=>"Company Profile",
+     "product_portfolio"=>"Product Portfolio",
+     "distribution_network"=>"Distribution Network",
+     "news_and_events"=>"News & Events",
+     "carrer_and_opportunities"=>"Career Opportunity",
      "coverage"=>"coverage",
-     "contact_us"=>"contact us",
+     "contact_us"=>"Contact us",
 
 
 

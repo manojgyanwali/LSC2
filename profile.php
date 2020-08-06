@@ -16,29 +16,29 @@ include('includes/dbcon.php');
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" href="css/header.css">
 
+    <!-- gallery css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+
 </head>
 <body>
 <?php include('header.php') ?>
 
 <div class="profileHead">
-    <div class="container-fluid" style="padding-left:140px;">
+    <div class="container-fluid profileLeft">
         <div class="row">
             <div class="col-md-7" >
                 <h2 class="HeadersB" style="margin-top:60px;">
-                        We are leading company in 
-                        this field, And provide specific 
-                        our every customers.
+                Committed to helping farmers in best possible ways
                     </h2>
                         <p class="text-muted" style="margin-top:20px">
-                        Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been 
-                    </p>
+                        Being the first private cereal seed company of Nepal, Lumbini Seed company has established itself as the reliable seed resource center since 2006. The company has successfully produced improved seeds, source seeds and OP variety seed considering the farmers demand all over Nepal. The company has taken lead in different national and international agricultural projects such as KUBK project, PACT,NSAF, CIMMYT. The company has developed world class infrastructure required for seed production, research and development such as seed lab, cold rooms and processing plants. The company achieved its major milestone; first ever production of maize and rice hybrid seeds in 2019 AD.                    </p>
 
                     <a href="contact.php">
                     <button class="btnMaster" style="margin-top:20px;"> Contact us </button>
                     </a>
             </div>
             <div class="col-md-5">
-            <img src="images/profile.png" style="max-width:100%; float:right;">
+            <img src="images/profile.jpg" style="max-width:100%; float:right;">
 
             </div>
         </div>
@@ -52,11 +52,10 @@ include('includes/dbcon.php');
         <div class="layer">
             <div class="container">
                 <h3 class="HeadersB">
-                    OUR VISION & MISSION
+                    OUR MISSION, VISION & GOAL
                 </h3>
                 <p>
-                Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                </p>
+                Lumbini Seed Company is dedicated towards the well being of farmers through quality seed production. The prime mission of the company is to replace unproductive OP varieties through their maintenance and boosting hybrid seed production. The major goal is production, processing and marketing of high quality seeds to meet the national demand and enhance export.                </p>
             </div>
         </div>
     </div>
@@ -74,15 +73,14 @@ include('includes/dbcon.php');
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="HeadersB">Elon Mask</h3>
-                    <i><b><p>CEO</p></b></i>
+                    <h3 class="HeadersB">Subash Raj Upadhyay</h3>
+                    <i><b><p>Chair person</p></b></i>
                     <br>
                     <p>
-                    24Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,24 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    </p>
+                    Greetings to all national, international organizations and scientists related in seed production, seed users and marketing personnel working as a bridge between company and the farmers. We are the beginners and there is still a long journey to accomplish in the seed sector There are lot of challenges and oppurtunities in this job. I am sure that one day we will be able to export our high quality OP as well as hybrid seeds in international market. To achieve this target we must work together with minimum margin of benefit honestly including all the seed value chain sectors. I also request to the seed related ministries, scientists, policy makers, bureaucrates media people, national and international organizations to focus on commercialization of seed production, processing and marketing through private seed company.                    </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="images/ceo.png" class="img-fluid" alt="" style="width:90%;">
+                    <img src="images/ceo.jpg" class="img-fluid" alt="" style="width:90%;">
                 </div>
             </div>
         </div>
@@ -97,6 +95,10 @@ include('includes/dbcon.php');
 
     <div class="team">
         <div class="container">
+
+        <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Management Group</h1>
+            <hr class="mt-2 mb-5">
+
             <div class="row ">
                 <?php
                     while($row=$result->fetch(PDO::FETCH_ASSOC))
@@ -155,21 +157,112 @@ include('includes/dbcon.php');
                         <h6 style="color:#2d5f2e; font-style:italic;">Chairperson</h6>
                     </div>
                 </div>
+            </div>
+              
+                <!-- our group starts here  -->
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Our Team</h1>
+                <hr class="mt-2 mb-5">
 
-                <div class="col-md-3 col-6">
-                    <div class="photoContainer">
-                        <img src="images/team.png" alt="" class="img-fluid;">
-                    </div>
-                    <div class="teamStatus">
-                        <h4 class="HeadersB">Elon Mask</h4>
-                        <h6 style="color:#2d5f2e; font-style:italic;">Chairperson</h6>
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <div class="photoContainer">
+                            <img src="images/team.png" alt="" class="img-fluid;">
+                        </div>
+                        <div class="teamStatus">
+                            <h4 class="HeadersB">Elon Mask</h4>
+                            <h6 style="color:#2d5f2e; font-style:italic;">Chairperson</h6>
+                        </div>
                     </div>
                 </div>
-
-            </div>
         </div>
     </div>
 </div>
+
+<!-- image gallery  -->
+
+<div class="container gallery-container">
+
+<h1 class="font-weight-bold text-center">Image Gallery</h1>
+<p class="page-description text-center">Some memorable collections of LSC</p>
+    <hr class="mt-2 mb-5">
+
+
+<div class="tz-gallery">
+
+    <div class="row">
+
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/park.jpg">
+                    <img src="images/park.jpg" alt="Park">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/bridge.jpg">
+                    <img src="images/bridge.jpg" alt="Bridge">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/tunnel.jpg">
+                    <img src="images/tunnel.jpg" alt="Tunnel">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/coast.jpg">
+                    <img src="images/coast.jpg" alt="Coast">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/rails.jpg">
+                    <img src="images/rails.jpg" alt="Rails">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a class="lightbox" href="images/traffic.jpg">
+                    <img src="images/traffic.jpg" alt="Traffic">
+                </a>
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+baguetteBox.run('.tz-gallery');
+</script>
+
+<!-- image gallery end  -->
 
 
 <!-- our partners starts  -->
@@ -183,12 +276,14 @@ include('includes/dbcon.php');
     <div class="container">
         
 
-                <h2 class="HeadersB" style="text-align:center;">
-                    OUR PARTNERS
-                </h2>
+    <h1 class="font-weight-bold text-center">OUR PARTNERS</h1>
+    <p class="page-description text-center">Collabrative partners of Lumbini Seed Company</p>
+    <hr class="mt-2 mb-2">
+
+
             
 
-            <div class="partnerLogo">
+            <div class="partnerLogo mb-5">
                 <div class="row justify-content-center">
                         <?php
                             
@@ -223,6 +318,10 @@ include('includes/dbcon.php');
             </div>
         
     </div>
+</div>
+
+<div>
+    <?php include('footer.html') ?>
 </div>
 
 
