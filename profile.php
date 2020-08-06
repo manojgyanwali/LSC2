@@ -301,8 +301,8 @@ baguetteBox.run('.tz-gallery');
     </div>
 </div>
 
-<div>
-    <?php include('footer.html') ?>
+<div class="footer">
+        <?php include('footer.html')?>
 </div>
 
 

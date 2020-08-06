@@ -151,7 +151,7 @@ if(isset($_REQUEST['delivered_order']))
                                 <h4 style="margin-top:30px;margin-left:20px;">Add Product</h4>
                                 <div class="container">
                                     <form action="add_product.php" method="POST" enctype="multipart/form-data">
-                                        <label><b>Upload Product Highlight Image (250*250)</b></label><br>
+                                        <label><b>Upload Product Highlight Image (350*350)</b></label><br>
                                         <input type="file" name="myfile" placeholder="Choose File" required><br><br>
 
                                         <p><b><i>Sub Images</i></b></p>

@@ -118,7 +118,7 @@ $result1->execute();
                                 <?php echo $row1['title']; ?>
                                 </h3>                          
                                 </a>
-                            <p class="mcf"><?php echo $row1['date']; ?></p>
+                                <i class="far fa-clock"></i> <span class="mcf"><?php echo $row1['date']; ?></span>
                         </div>
                     </div>
                     <?php } ?>
@@ -127,7 +127,7 @@ $result1->execute();
 
             
 
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="allNewsImg">
                     <img src="images/card.png" alt="">
                 </div>
@@ -137,10 +137,14 @@ $result1->execute();
                     </h3>
                     <p class="mcf">20th July, 2020</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
+</div>
+
+<div class="footer" style="margin-top:50px;">
+    <?php include('footer.html') ?>
 </div>
     
 
