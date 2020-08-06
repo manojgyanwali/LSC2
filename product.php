@@ -1,5 +1,5 @@
  <?php 
-session_start();
+ include('header.php');
 include('includes/dbcon.php');
 
 $qry="select *from product_portfolio";
@@ -40,7 +40,7 @@ $result10->execute();
 </head>
 <body>
 
-<?php include('header.php') ?>
+
 
 <!-- product portfolio head section begins  -->
 <div class="pTop">

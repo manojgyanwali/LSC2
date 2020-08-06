@@ -123,6 +123,50 @@ if(isset($_REQUEST["customer_id1"]))
 
 }
 
+if(isset($_REQUEST["contact_id"]))
+{
+    $qry7="select *from users_feedback where id={$_REQUEST['contact_id']}";
+    $result7=$conn->prepare($qry7);
+    $result7->execute();
+    while($row7=$result7->fetch(PDO::FETCH_ASSOC))
+    {
+?>
+  <div class="row">
+
+    <div class="col-md-6">
+        <p class="text-muted">
+        Names
+        </p>
+        <h5>
+           <?php echo $row7['name']; ?>
+        </h5>
+    </div>
+
+    <div class="col-md-6">
+        <p class="text-muted">
+            Contact No
+        </p>
+        <h5>
+            <?php echo $row7['phone']; ?>
+        </h5>
+    </div>
+</div>
+
+ <div class="row">
+    <div class="col-md-12">
+        <p class="text-muted">
+             Message
+        </p>
+        <p><?php echo $row7['message']; ?> </p>
+    </div>
+</div>
+
+<?php
+
+}
+
+
+}  
 
 
 

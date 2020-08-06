@@ -179,6 +179,17 @@ include('includes/dbcon.php');
 </div>
 
 <!-- image gallery  -->
+<?php 
+include('includes/dbcon.php');
+
+$qry3="select *from photo_gallery ORDER BY id DESC";
+$result3=$conn->prepare($qry3);
+$result3->execute();
+
+
+
+
+?>
 
 <div class="container gallery-container">
 
@@ -190,67 +201,26 @@ include('includes/dbcon.php');
 <div class="tz-gallery">
 
     <div class="row">
+            <?php while($row3=$result3->fetch(PDO::FETCH_ASSOC)) 
+            
+                {
+            ?>
 
         <div class="col-6 col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a class="lightbox" href="images/park.jpg">
-                    <img src="images/park.jpg" alt="Park">
+                <a class="lightbox" href="images/photo_gallery/<?php echo $row3['image'] ?>">
+                    <img src="images/photo_gallery/<?php echo $row3['image'] ?>" alt="Park">
                 </a>
                 <div class="caption">
-                    <h3>Thumbnail label</h3>
+                    <h3><?php echo $row3['title'] ?></h3>
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="images/bridge.jpg">
-                    <img src="images/bridge.jpg" alt="Bridge">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="images/tunnel.jpg">
-                    <img src="images/tunnel.jpg" alt="Tunnel">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="images/coast.jpg">
-                    <img src="images/coast.jpg" alt="Coast">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="images/rails.jpg">
-                    <img src="images/rails.jpg" alt="Rails">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a class="lightbox" href="images/traffic.jpg">
-                    <img src="images/traffic.jpg" alt="Traffic">
-                </a>
-                <div class="caption">
-                    <h3>Thumbnail label</h3>
-                </div>
-            </div>
-        </div>
+                <?php } ?>
+        
+        
+        
+       
     </div>
 
 </div>

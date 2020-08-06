@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../includes/dbcon.php');
 if(isset($_SESSION['is_login']))
 {
    echo "";
@@ -8,6 +9,11 @@ else
 {
    header('location:index.php');
 }
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +33,18 @@ else
         <div class="homeContent">
             <div class="container" style="padding-left:140px;">
                     <div class="topSections">
+                    <?php 
+                                    $qry2="select *from users_feedback";
+                                    $result2=$conn->prepare($qry2);
+                                    $result2->execute();
+                                ?>
                         <h1>Contact us</h1>
                         <p class="text-muted">Admin/contact</p>
                     </div>
                     <br>
                     <div class="contactTable">
                         <p>View All the inbox messages from contact us menu here</p>
+
 
                                 <table class="table table-striped">
                                         <thead>
@@ -46,20 +58,35 @@ else
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <?php  
+                                               while ($row2=$result2->fetch(PDO::FETCH_ASSOC)){
+                                                ?>
                                             <tr>
+                                          
+
+
+                                           
                                                 <th scope="row">1</th>
                                                 <td>
                                                     25th July,2020
                                                 </td>
-                                                <td>Aashish Khanal</td>
-                                                <td>Address goes here</td>
-                                                <td>Email@gmail.com</td>
+                                                <td> <?php echo $row2['name']; ?></td>
+                                                <td><?php echo $row2['address']; ?></td>
+                                                <td><?php echo $row2['email']; ?></td>
                                                 <td>
-                                                <button class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal">View Details</button>
-                                                </td>
+                                                <!-- <button class="btn btn-primary view_data">View Details</button> -->
+                                            <button class="btn btn-primary view_data" contact_id="<?php echo $row2['id']; ?>" >View Details</button>
 
-                                                     <!-- Modal -->
-                                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                </td>
+                                              
+
+                                                
+                                            </tr>  
+                                            <?php } ?>
+
+
+                                                 <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                         <div class="modal-header">
@@ -68,15 +95,15 @@ else
                                                             <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <div class="row">
+                                                        <div class="modal-body" id="users_feedback">
+                                                            <!-- <div class="row">
 
                                                                 <div class="col-md-6">
                                                                     <p class="text-muted">
-                                                                    Name
+                                                                    Namess
                                                                     </p>
                                                                     <h5>
-                                                                        Aashish Khanal
+                                                                        Aashish Khanalsss
                                                                     </h5>
                                                                 </div>
 
@@ -88,18 +115,18 @@ else
                                                                         0982838233
                                                                     </h5>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div class="col-md-12">
                                                                     <p class="text-muted">
                                                                     Message
                                                                     </p>
                                                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the </p>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                                 
-                                                            </div>
+                                                        </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                 <button type="button" class="btn btn-primary">Marked as read</button>
@@ -107,8 +134,7 @@ else
                                                         </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </tr>                                         
+                                                </div>                                       
                                             
                                         </tbody>
                                         
@@ -120,9 +146,47 @@ else
     </div>
 
    
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-<script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <!-- <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+
+<script>  
+ $(document).ready(function(){  
+      $('.view_data').click(function(){  
+          console.log("button clicked");
+          var contact_id=$(this).attr("contact_id");
+          
+           $.ajax({
+              
+              url:"dataModal.php",
+              method:"POST",
+              data:{contact_id:contact_id},
+              success:function(data){
+                  $('#users_feedback').html(data);
+                  $('#exampleModal').modal("show");
+
+               
+              }
+          });
+         
+            
+        
+          
+          
+      });  
+
+
+
+      
+         
+            
+        
+          
+          
+      });  
+   
+ </script>
 </body>
 </html>
