@@ -1,3 +1,110 @@
+<?php
+
+include('../includes/dbcon.php');
+if(isset($_REQUEST['add_top_research']))
+    {
+
+    $title=$_REQUEST['title'];
+    $description=$_REQUEST['description'];
+    
+    
+
+    
+    $tempname=$_FILES['image']['tmp_name'];
+    $image_name=$_FILES['image']['name'];
+    
+   
+   move_uploaded_file($tempname,"../images/research_images/".$image_name);
+    
+    $qry="insert into top_research(image,title,description) values (?,?,?)";
+         $result=$conn->prepare($qry);
+         $result->bindParam(1,$image_name,PDO::PARAM_INT);
+         $result->bindParam(2,$title,PDO::PARAM_STR);
+         $result->bindParam(3,$description,PDO::PARAM_STR);
+         
+         
+       $result->execute();
+         
+    
+
+    }
+
+//  add data on on_going_research
+
+    if(isset($_REQUEST['add_on_going_research']))
+    {
+
+    $title=$_REQUEST['title'];
+    $description=$_REQUEST['description'];
+    
+    
+
+    
+    $tempname=$_FILES['image']['tmp_name'];
+    $image_name=$_FILES['image']['name'];
+    
+   
+   move_uploaded_file($tempname,"../images/research_images/".$image_name);
+    
+    $qry="insert into on_going_research(image,title,description) values (?,?,?)";
+         $result=$conn->prepare($qry);
+         $result->bindParam(1,$image_name,PDO::PARAM_INT);
+         $result->bindParam(2,$title,PDO::PARAM_STR);
+         $result->bindParam(3,$description,PDO::PARAM_STR);
+         
+         
+       $result->execute();
+         
+    
+
+    }
+
+//add complete research_report
+
+    if(isset($_REQUEST['add_complete_research']))
+    {
+
+    $title=$_REQUEST['title'];
+    
+    
+    
+
+    
+    $tempname=$_FILES['file']['tmp_name'];
+    $file_name=$_FILES['file']['name'];
+    
+   
+   move_uploaded_file($tempname,"../images/complete_research_file/".$file_name);
+    
+    $qry="insert into complete_research(file,title) values (?,?)";
+         $result=$conn->prepare($qry);
+         $result->bindParam(1,$file_name,PDO::PARAM_INT);
+         $result->bindParam(2,$title,PDO::PARAM_STR);
+         
+         
+         
+       $result->execute();
+         
+    
+
+    }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,35 +149,36 @@
                                 <h4 style="margin-top:30px;margin-left:20px;">Top Research</h4>
                                 <div class="contents" style="padding:20px;">
                                    
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                                                <label for="">Add Research title</label>
+                                                                <input type="text" name="title" class="form-control col-md-6" required><br>
+                                                                <label><b>Upload Research Highlight Image (250*250)</b></label> <br>
+                                                                    <input type="file" name="image" placeholder="Choose File" required><br><br>
 
-                                    <label for="">Add Research title</label>
-                                    <input type="text" class="form-control col-md-6"><br>
-                                    <label><b>Upload Research Highlight Image (250*250)</b></label> <br>
-                                        <input type="file" placeholder="Choose File"><br><br>
+                                                                    <p><b><i>Sub Images</i></b></p>
 
-                                        <p><b><i>Sub Images</i></b></p>
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <input type="file" placeholder="Choose File">
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <input type="file" placeholder="Choose File">
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <input type="file" placeholder="Choose File">
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <input type="file" placeholder="Choose File">
+                                                                        </div>
+                                                                    </div> <br>
 
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
-                                            </div>
-                                        </div> <br>
+                                                                    <label for="">Add description</label>
+                                                                    <textarea class="form-control" name="description" id="" cols="20" rows="10" required></textarea>
 
-                                    <label for="">Add description</label>
-                                        <textarea class="form-control" name="" id="" cols="20" rows="10"></textarea>
+                                                            
 
-                                   
-
-                                    <button class="btn btn-info">Publish Top Research</button>
+                                                                <button type="submit" name="add_top_research" class="btn btn-info">Publish Top Research</button>
+                                    </form>
                                 </div>
                             </div>
 
@@ -78,10 +186,11 @@
                             <div class="tab-pane fade" id="ongoingR" role="tabpanel" aria-labelledby="profile-tab">
                                 <h4 style="margin-top:30px;margin-left:20px;">Add ongoing research</h4>
                                 <div class="container">
+                                <form action="" method="POST" enctype="multipart/form-data">
                                 <label for="">Add Research title</label>
-                                    <input type="text" class="form-control col-md-6"><br>
+                                    <input type="text" name="title" class="form-control col-md-6"><br>
                                     <label><b>Upload Research Highlight Image (250*250)</b></label> <br>
-                                        <input type="file" placeholder="Choose File"><br><br>
+                                        <input type="file" name="image" placeholder="Choose File"><br><br>
 
                                         <p><b><i>Sub Images</i></b></p>
 
@@ -101,11 +210,13 @@
                                         </div> <br>
 
                                     <label for="">Add description</label>
-                                        <textarea class="form-control" name="" id="" cols="20" rows="10"></textarea>
+                                        <textarea class="form-control" name="description" id="" cols="20" rows="10"></textarea>
 
                                    
 
-                                    <button class="btn btn-info">Publish ongoing research</button>
+                                    <button type="submit" name="add_on_going_research" class="btn btn-info">Publish ongoing research</button>
+                                    </form>
+                                
                                 </div>
                                     
                             </div>
@@ -115,12 +226,16 @@
                                 <h4 style="margin-top:30px;margin-left:20px;">Add complete research report</h4>
 
                                 <div class="container">
-                                <label for="">Add Research title</label>
-                                    <input type="text" class="form-control col-md-6"><br>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <label for="">Add Research title</label>
+                                    <input type="text" name="title" class="form-control col-md-6"><br>
                                     <label><b>Upload Research Report PDF file</b></label> <br>
-                                        <input type="file" placeholder="Choose File"><br><br>
-                                    <button class="btn btn-info">Publish complete research report</button>
+                                    <input type="file" name="file" placeholder="Choose File"><br><br>
+                                    <button type="submit" name="add_complete_research" class="btn btn-info">Publish complete research report</button>
+                                </form>
                                 </div>
+
+
 
                                
 

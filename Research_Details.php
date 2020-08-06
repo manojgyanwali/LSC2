@@ -1,3 +1,39 @@
+<?php 
+
+include('includes/dbcon.php');
+if(isset($_REQUEST['id']))
+{
+$qry="select *from on_going_research where id=?";
+$result=$conn->prepare($qry);
+$result->bindParam(1,$id);
+$id=$_REQUEST['id'];
+
+
+$result->execute();
+$data=$result->fetch(PDO::FETCH_ASSOC);
+}
+else
+{
+$qry="select *from top_research where id=?";
+$result=$conn->prepare($qry);
+$result->bindParam(1,$id);
+$id=$_REQUEST['ids'];
+
+
+$result->execute();
+$data=$result->fetch(PDO::FETCH_ASSOC);
+}
+
+
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +53,16 @@
 <!-- research detail  -->
 <div class="rdetail">
     <div class="container">
-        <h2>
-    UIS Releases More Timely Country-Level Data for SDG 9.5 on R&D
+                <h2>
+                    <?php echo $data['title']; ?>
                 </h2>
                 <span><i class="fas fa-clock"></i> 22, July 2020</span>
 
                 <!-- images section  -->
-                <img src="images/rd2.png" alt="" class="img-fluid ongoingR">
+                <img src="images/research_images/<?php echo $data['image']; ?>" alt="" class="img-fluid ongoingR">
                 <p class="text-muted">
-                Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.                </p>
-                
+                        <?php echo $data['description'] ?> 
+                </p>               
                 <!-- facebook share  -->
                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&width=77&height=28&appId"
                                     width="77" 
