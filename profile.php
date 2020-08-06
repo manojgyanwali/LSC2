@@ -295,25 +295,6 @@ baguetteBox.run('.tz-gallery');
                     </div>
                         <?php } ?>
 
-                    <div class="col-md-3 col-6">
-                        <img src="images/LOGO1.png" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="col-md-3 col-6">
-                        <img src="images/LOGO1.png" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="col-md-3 col-6">
-                        <img src="images/LOGO1.png" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="col-md-3 col-6">
-                        <img src="images/LOGO1.png" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="col-md-3 col-6">
-                        <img src="images/LOGO1.png" alt="" class="img-fluid">
-                    </div>
                 </div>
             </div>
         

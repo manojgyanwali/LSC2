@@ -130,22 +130,6 @@ $row3=$result3->fetch(PDO::FETCH_ASSOC);
                                 } 
                             ?>
 
-
-                        <tr>
-                            <td width="40%">
-                                <a href="#"><img src="images/news.png" alt="" class="img-fluid"></a>
-                            </td>
-                            <td width="60%">
-                                <a href="#" class="normalA"><h6 class="HeadersB">
-                                Farmers has been 
-                                noticed about the virus 
-                                </h6></a>
-                                <small class="text-muted">
-                                <i class="far fa-clock"></i> <span>6 june, 2020</span>
-                                </small>
-                            </td>
-                        </tr>
-
                     </Table>
 
                 </div>
@@ -204,7 +188,7 @@ $row3=$result3->fetch(PDO::FETCH_ASSOC);
 
                         <p style="padding:10px 0">
                         Established in 2002 AD, Lumbini Seed Company is the first cereal seed company in Nepal. It is registered under the company act 2053 in Siddharthanagar-7, Rupandehi. The company has started F/S seed production after the approval of Seed board of Nepal on 2005 AD. Since then, seed multiplication and hybrid seed production programs with active involvement of farmers, dealers, national and international organizations is being conducted. We are moving forward in the process of making Nepal a seed secure and seed sustainable country.                        </p>
-                        <a href="#"><button class="btn btn-info">More About Us</button></a>
+                        <a href="profile.php"><button class="btn btn-info">More About Us</button></a>
                     </div>
                     <div class="col-md-4" style="padding:20px;">
                         <img src="images/company.jpg" class="img-fluid">

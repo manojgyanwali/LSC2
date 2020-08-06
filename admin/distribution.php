@@ -118,7 +118,19 @@ $image=$_FILES['file']['name'];
                                     $result1->execute();
                                 ?>
                             <div class="tab-pane fade" id="vDistribution" role="tabpane1" aria-labelledby="view-eomployee">
-                                <h4 style="margin-top:30px;margin-left:20px;">View Dealer</h4>
+                                <h4 style="margin-top:30px;margin-left:20px; float:left;">View Dealer</h4>
+
+                                 <!-- search section  -->
+                                 <div class="col-md-6" style="float:right; margin-top:30px">
+                                    <form action="product_search.php" method="POST" id="forms">
+                                        <div class="input-group mb-3" id="searchSection">
+                                            <input type="text" name="search_box" class="form-control" placeholder="What are you looking for?">
+                                            <div class="input-group-prepend">
+                                            <button type="submit" class="input-group-text" name="search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
 
                                 <div class="contents" style="padding:20px;">
                                     <table class="table table-striped">

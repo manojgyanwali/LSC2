@@ -104,10 +104,16 @@ else
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#partners" role="tab" aria-controls="profile" aria-selected="false">Add Partners</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#gallery" role="tab" aria-controls="profile" aria-selected="false">Photo Gallery</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vEmployees" role="tab" aria-controls="profile" aria-selected="false">View Employees</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vPartners" role="tab" aria-controls="profile" aria-selected="false">View Partners</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vGallery" role="tab" aria-controls="profile" aria-selected="false">Edit Gallery</a>
                         </li>
                         
                     </ul>
@@ -143,6 +149,21 @@ else
                                             <?php if(isset($message)){ echo $message;}   ?>
                                     </div>
                             </div>
+
+                            <!-- add image gallery  -->
+                             <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="profile-tab">
+                                <h4 style="margin-top:30px;margin-left:20px;">Add Photo in Gallery</h4>
+                                    <div class="contents" style="padding:20px;">
+                                        <label>Upload photo</label> <br>
+                                        <input type="file" placeholder="Choose File"><br><br>
+
+                                        <label for="">Add image caption</label>
+                                        <input type="text" name="img_caption" class="form-control col-md-6" required><br>
+
+                                        <button class="btn btn-info">Add photo</button>
+                                    </div>
+                            </div>
+
 
                                 <!--************************** view employees***********************  -->
 
@@ -197,7 +218,7 @@ else
                                     $result2->execute();
                                 ?>
                             <div class="tab-pane fade" id="vPartners" role="tabpane1" aria-labelledby="view-partners">
-                            <h4 style="margin-top:30px;margin-left:20px;">View Partner</h4>
+                                <h4 style="margin-top:30px;margin-left:20px;">View Partner</h4>
 
                                 
                                 <div class="contents" style="padding:20px;">
@@ -234,6 +255,42 @@ else
                                 </div>
 
                             </div>
+                            
+                            <!-- view image gallery -->
+                            <div class="tab-pane fade" id="vGallery" role="tabpane1" aria-labelledby="view-partners">
+                                <h4 style="margin-top:30px;margin-left:20px;">Edit Photo Gallery</h4>
+
+                                
+                                <div class="contents" style="padding:20px;">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Photo</th>
+                                            <th scope="col">Caption</th>
+                                            <th scope="col">EDIT | DELETE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <th scope="row">1</th>
+                                            <td>
+                                                <img src="../images/LOGO1.png" alt="" style="width:50px;">
+                                            </td>
+                                            <td>image of event</td>
+                                            <td>
+                                                <a data-toggle="tab" href="#partners"><i class="fa fa-edit" style="font-size:larger;"></i></a>
+                                                <span style="border: 1px solid black; margin: 5px 10px;"></span>
+                                                <a href=""><i class="fas fa-trash-alt" style="font-size:larger;color:red;"></i></a>
+                                            </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
             </div>

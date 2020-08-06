@@ -220,7 +220,19 @@ if(isset($_REQUEST['delivered_order']))
                                 ?>
 
                             <div class="tab-pane fade" id="vProduct" role="tabpane1" aria-labelledby="view-eomployee">
-                                <h4 style="margin-top:30px;margin-left:20px;">View Employee</h4>
+                                <h4 style="margin-top:30px;margin-left:20px; float:left;">View Product</h4>
+
+                                 <!-- search section  -->
+                                 <div class="col-md-6" style="float:right; margin-top:30px">
+                                    <form action="product_search.php" method="POST" id="forms">
+                                        <div class="input-group mb-3" id="searchSection">
+                                            <input type="text" name="search_box" class="form-control" placeholder="What are you looking for?">
+                                            <div class="input-group-prepend">
+                                            <button type="submit" class="input-group-text" name="search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                                         
                                 <div class="contents" style="padding:20px;">
                                     <table class="table table-striped">
@@ -247,7 +259,7 @@ if(isset($_REQUEST['delivered_order']))
                                                    
                                                     echo $row2['product_image'];
 
-                                                    ?>" alt="" style="width:50px;">
+                                                    ?>" alt="" style="width:50px; height:50px;">
                                                 </td>
                                                 <td><?php echo $row2['product_name']; ?></td>
                                                 <td>
@@ -269,6 +281,7 @@ if(isset($_REQUEST['delivered_order']))
                                 </div>
 
                             </div>
+                           
                             <!-- view order -->
                             <?php  
                                 $qry4="select *from product_portfolio,customer_data  where product_portfolio.id=customer_data.product_id";
@@ -276,7 +289,19 @@ if(isset($_REQUEST['delivered_order']))
                             ?>   
                             
                             <div class="tab-pane fade" id="vOrder" role="tabpane1" aria-labelledby="view-partners">
-                            <h4 style="margin-top:30px;margin-left:20px;">View Order</h4>
+                            <h4 style="margin-top:30px;margin-left:20px; float:left;">View Order</h4>
+
+                             <!-- search section  -->
+                             <div class="col-md-6" style="float:right; margin-top:30px">
+                                    <form action="product_search.php" method="POST" id="forms">
+                                        <div class="input-group mb-3" id="searchSection">
+                                            <input type="text" name="search_box" class="form-control" placeholder="What are you looking for?">
+                                            <div class="input-group-prepend">
+                                            <button type="submit" class="input-group-text" name="search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> <br><br><br>
 
                                 
                                 <div class="contents" style="padding:20px;">
@@ -284,7 +309,7 @@ if(isset($_REQUEST['delivered_order']))
                                    <!-- new order starts  -->
 
                                     <table class="table table-striped">
-                                        <p><b>New Order</b></p>
+                                        <h4><b>New Order</b></h4>
                                         <thead>
                                             <tr>
                                             <th scope="col">#</th>
@@ -305,7 +330,7 @@ if(isset($_REQUEST['delivered_order']))
                                             <th scope="row">1</th>
                                             
                                             <td>
-                                                <img src="../product_portfolio_image/<?php echo $data4['product_image'];?>" alt="pic" style="width:50px;">
+                                                <img src="../product_portfolio_image/<?php echo $data4['product_image'];?>" alt="pic" style="width:50px; height:50px;">
                                             </td>
                                             <td>
                                                 <?php echo $data4['product_name'];
@@ -364,7 +389,7 @@ if(isset($_REQUEST['delivered_order']))
                                        
 
 
-                                        <p><b><i>Previous Order</b></i></p>
+                                        <h4><b><i>Previous Order</b></i></h4>
                                         <thead>
                                             <tr>
                                             <th scope="col">#</th>
@@ -385,7 +410,7 @@ if(isset($_REQUEST['delivered_order']))
                                             <tr>
                                             <th scope="row">1</th>
                                             <td>
-                                                <img src="../product_portfolio_image/<?php echo $row5['image'];?>" alt="pic" style="width:50px;">
+                                                <img src="../product_portfolio_image/<?php echo $row5['image'];?>" alt="pic" style="width:50px; height:50px;">
                                             </td>
                                                                     
                                             <td>

@@ -80,7 +80,7 @@ $result->execute();
                                 <a href="#" class="cardA"><div class="card card4">
                                 <h1 class="cardHeading">20</h1>
                                     <i class="fa fa-id-badge cardIcons"></i>
-                                    <h5 style="font-weight:bold">RECENT ORDERS</h5>
+                                    <h5 style="font-weight:bold">INBOX</h5>
                             </div></a>
                         </div>
                     </div>
