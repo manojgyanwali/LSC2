@@ -15,17 +15,23 @@
     <!-- user header starts  -->
     <div class="usersHeader" style="background-color: #e5e5e5; height: 60px; margin-top: 20px;">
         <div class="container">
-            <div class="logoContains">
-                <a href="index.php"><img src="images/Logo.png" alt="logo"
-                        style="float: left; margin-top: 10px; padding-right: 20px;"></a>
-                <h4 style="margin-top: 50px; margin-left: 10px; padding-top: 10px;">Lumbini Seed Company</h4>
-            </div>
-            <div class="RightContains" style="margin-top: 30px;">
-                <ul class="socialIcons">
-                    <li> <a href=""><i class="fa fa-facebook"></i></a></i></li>
-                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                </ul>
+            <div class="row justify-content-between">
+
+                <div class="col-md-4 logoContains">
+                    <a href="index.php"><img src="images/Logo.png" alt="logo"
+                            style="float: left; margin-top: 10px; padding-right: 20px;"></a>
+                    <h4 style=" margin-left: 10px; padding-top: 10px;">Lumbini Seed Company</h4>
+                </div>
+
+                <div class="col-md-4" style="padding-top: 10px;">
+                    <a href="index.php"><button class="btn btn-secondary">Logout</button></a>
+                    <a href="setting.php">
+                        <button class="btn btn-info"><i class="fas fa-cog"></i> Settings
+                        </button>
+                    </a>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -57,12 +63,10 @@
 
                 </div>
                 <div class="col-md-2">
-                    <span class="userIcons">
-                        <i class="fas fa-cog"></i>
-                    </span>
-                    <span class="userIcons">
+
+                    <!-- <span class="userIcons">
                         <i class="fas fa-ellipsis-h"></i>
-                    </span>
+                    </span> -->
                 </div>
             </div>
         </div>
@@ -72,11 +76,101 @@
 
     <div class="userEnd">
         <div class="container">
+            <h4>My Order</h4>
 
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Order Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="images/subnewsImg.png" style="height: 50px; width: 80%;" alt="" class="img-fluid">
+                        </td>
+                        <td>Dhan 23</td>
+                        <td class="delivery">not Delivered</td>
+                        <td>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View
+                                Details</button>
+                        </td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="userinfo" style="background-color: #caf0f8;padding:20px; border-radius: 10px;">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h5 class="font-weight-bold">Ordered Person</h5>
+                                <p class="text-muted">Ashish khanal</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="font-weight-bold">Ordered Address</h5>
+                                <p class="text-muted">Maitidevi, Kathmandu</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="font-weight-bold">Contact num</h5>
+                                <p class="text-muted">98384943</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="font-weight-bold">Email</h5>
+                                <p class="text-muted">@gmailc.om</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Category</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dhan</td>
+                                <td>Dhan 24</td>
+                                <td>Rs 2300</td>
+                                <td>40 kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger">Cancel Order</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
