@@ -6,21 +6,50 @@ if(isset($_REQUEST['add_top_research']))
 
     $title=$_REQUEST['title'];
     $description=$_REQUEST['description'];
+    $date = date("Y-m-d");
     
     
-
+//main image upload
     
     $tempname=$_FILES['image']['tmp_name'];
     $image_name=$_FILES['image']['name'];
     
    
-   move_uploaded_file($tempname,"../images/research_images/".$image_name);
+    move_uploaded_file($tempname,"../images/research_images/".$image_name);
+
+// sub image1 upload
+    $tempname1=$_FILES['image1']['tmp_name'];
+    $image_name1=$_FILES['image1']['name'];
     
-    $qry="insert into top_research(image,title,description) values (?,?,?)";
+   
+    move_uploaded_file($tempname1,"../images/research_images/".$image_name1);
+
+//sub image2 upload
+$tempname2=$_FILES['image2']['tmp_name'];
+$image_name2=$_FILES['image2']['name'];
+    
+   
+    move_uploaded_file($tempname2,"../images/research_images/".$image_name2);
+
+//sub image3 upload
+
+    $tempname3=$_FILES['image3']['tmp_name'];
+    $image_name3=$_FILES['image3']['name'];
+    
+   
+    move_uploaded_file($tempname3,"../images/research_images/".$image_name3);
+
+
+    
+    $qry="insert into top_research(image,sub_image1,sub_image2,sub_image3,title,description,date) values (?,?,?,?,?,?,?)";
          $result=$conn->prepare($qry);
          $result->bindParam(1,$image_name,PDO::PARAM_INT);
-         $result->bindParam(2,$title,PDO::PARAM_STR);
-         $result->bindParam(3,$description,PDO::PARAM_STR);
+         $result->bindParam(2,$image_name1,PDO::PARAM_INT);
+         $result->bindParam(3,$image_name2,PDO::PARAM_INT);
+         $result->bindParam(4,$image_name3,PDO::PARAM_INT);
+         $result->bindParam(5,$title,PDO::PARAM_STR);
+         $result->bindParam(6,$description,PDO::PARAM_STR);
+         $result->bindParam(7,$date,PDO::PARAM_LOB);
          
          
        $result->execute();
@@ -29,28 +58,58 @@ if(isset($_REQUEST['add_top_research']))
 
     }
 
-//  add data on on_going_research
+//........................  add data on on_going_research.................................
 
     if(isset($_REQUEST['add_on_going_research']))
     {
 
     $title=$_REQUEST['title'];
     $description=$_REQUEST['description'];
+    $date = date("Y-m-d");
     
     
-
+//main image upload
     
     $tempname=$_FILES['image']['tmp_name'];
     $image_name=$_FILES['image']['name'];
     
    
    move_uploaded_file($tempname,"../images/research_images/".$image_name);
+
+   // sub image1 upload
+   $tempname1=$_FILES['image1']['tmp_name'];
+   $image_name1=$_FILES['image1']['name'];
+   
+  
+   move_uploaded_file($tempname1,"../images/research_images/".$image_name1);
+
+//sub image2 upload
+$tempname2=$_FILES['image2']['tmp_name'];
+$image_name2=$_FILES['image2']['name'];
+   
+  
+   move_uploaded_file($tempname2,"../images/research_images/".$image_name2);
+
+//sub image3 upload
+
+   $tempname3=$_FILES['image3']['tmp_name'];
+   $image_name3=$_FILES['image3']['name'];
+   
+  
+   move_uploaded_file($tempname3,"../images/research_images/".$image_name3);
+
     
-    $qry="insert into on_going_research(image,title,description) values (?,?,?)";
+    $qry="insert into on_going_research(image,sub_image1,sub_image2,sub_image3,title,description,date) values (?,?,?,?,?,?,?)";
          $result=$conn->prepare($qry);
-         $result->bindParam(1,$image_name,PDO::PARAM_INT);
-         $result->bindParam(2,$title,PDO::PARAM_STR);
-         $result->bindParam(3,$description,PDO::PARAM_STR);
+         $result->bindParam(1,$image_name,PDO::PARAM_STR);
+         $result->bindParam(2,$image_name1,PDO::PARAM_STR);
+         $result->bindParam(3,$image_name2,PDO::PARAM_STR);
+         $result->bindParam(4,$image_name3,PDO::PARAM_STR);
+
+         $result->bindParam(5,$title,PDO::PARAM_STR);
+         $result->bindParam(6,$description,PDO::PARAM_STR);
+         $result->bindParam(7,$date,PDO::PARAM_LOB);
+         
          
          
        $result->execute();
@@ -59,7 +118,7 @@ if(isset($_REQUEST['add_top_research']))
 
     }
 
-//add complete research_report
+//................................add complete research_report.......................................
 
     if(isset($_REQUEST['add_complete_research']))
     {
@@ -159,17 +218,15 @@ if(isset($_REQUEST['add_top_research']))
 
                                                                     <div class="row">
                                                                         <div class="col-md-3">
-                                                                            <input type="file" placeholder="Choose File">
+                                                                            <input type="file" name="image1" placeholder="Choose File">
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <input type="file" placeholder="Choose File">
+                                                                            <input type="file" name="image2" placeholder="Choose File">
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <input type="file" placeholder="Choose File">
+                                                                            <input type="file" name="image3" placeholder="Choose File">
                                                                         </div>
-                                                                        <div class="col-md-3">
-                                                                            <input type="file" placeholder="Choose File">
-                                                                        </div>
+                                                                        
                                                                     </div> <br>
 
                                                                     <label for="">Add description</label>
@@ -196,17 +253,15 @@ if(isset($_REQUEST['add_top_research']))
 
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
+                                                <input type="file" name="image1" placeholder="Choose File">
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
+                                                <input type="file" name="image2" placeholder="Choose File">
                                             </div>
                                             <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
+                                                <input type="file" name="image3" placeholder="Choose File">
                                             </div>
-                                            <div class="col-md-3">
-                                                <input type="file" placeholder="Choose File">
-                                            </div>
+                                            
                                         </div> <br>
 
                                     <label for="">Add description</label>

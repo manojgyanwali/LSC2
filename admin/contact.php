@@ -96,35 +96,7 @@ else
                                                             </button>
                                                         </div>
                                                         <div class="modal-body" id="users_feedback">
-                                                            <!-- <div class="row">
-
-                                                                <div class="col-md-6">
-                                                                    <p class="text-muted">
-                                                                    Namess
-                                                                    </p>
-                                                                    <h5>
-                                                                        Aashish Khanalsss
-                                                                    </h5>
-                                                                </div>
-
-                                                                <div class="col-md-6">
-                                                                    <p class="text-muted">
-                                                                        Contact No
-                                                                    </p>
-                                                                    <h5>
-                                                                        0982838233
-                                                                    </h5>
-                                                                </div>
-                                                            </div> -->
-
-                                                            <!-- <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <p class="text-muted">
-                                                                    Message
-                                                                    </p>
-                                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the </p>
-                                                                </div>
-                                                            </div> -->
+                                                            
                                                                 
                                                         </div>
                                                             <div class="modal-footer">
@@ -146,7 +118,7 @@ else
     </div>
 
    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <!-- <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script> -->

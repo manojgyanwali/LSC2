@@ -168,7 +168,25 @@ if(isset($_REQUEST["contact_id"]))
 
 }  
 
-
-
+if(isset($_REQUEST["distribution_id"]))
+{
+    $qry7="select *from distributon_network where id={$_REQUEST['distribution_id']}";
+    $result7=$conn->prepare($qry7);
+    $result7->execute();
+    while($row7=$result7->fetch(PDO::FETCH_ASSOC))
+    {
+?>
+<h5><b>Shree Shirdar Seed Distribution Network</b></h5>
+                    <p class="text-muted">Kotihawa, Bhairahawa</p>
+                    <br>
+                    <p><b>Contact no</b></p>
+                    <p class="text-muted">984524224</p>
+                    <p><b>Owner Name</b></p>
+                    <p class="text-muted">Ram Chandra Tripathi</p>
+                    <br>
+                    <b><a href="#">Find in Map</a></b>
+<?php
+    }
+}
 
 ?>

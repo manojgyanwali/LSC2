@@ -30,32 +30,29 @@ $result->execute();
         <h2 class="HeadersB" style="padding:70px 0 20px 0;">Distribution Network</h2>
         <p class="text-muted">We have various dealers around Nepal connected in our distribution network. You can find and contact any dealers near you and get our service. Here we've placed all the dealers name and their conatact information. If you still need any support please <a href="contact.php"><b>contact us </b> </a></p>
 
-            <?php 
-                    while($row=$result->fetch(PDO::FETCH_ASSOC))
-                    {
-
-                    
-                
-                    ?>
+           
 
      
-            <?php } ?>   
-            <div class="cardSection">
-
+<div class="cardSection">
+                        <?php 
+                            while($row=$result->fetch(PDO::FETCH_ASSOC))
+                            {
+                        ?>
 <div class="dCard">
+                    
     <div class="row">
 
         <div class="col-md-9">
             <Table>
                 <tr>
                     <td>
-                        <img src="images/p2.jpg" class="dImg" alt="">
+                        <img src="images/distribution_network_images/<?php echo $row['image'] ?>" class="dImg" alt="">
                     </td>
                     <td>
                         <h3 class="HeadersB">
-                            Dealers Name
+                           <?php echo $row['name'] ?>
                         </h3>
-                        <p class="mcf">Location goes here</p>
+                        <p class="mcf"><?php echo $row['google_map_address'] ?></p>
                     </td>
                 </tr>
             </Table>
@@ -63,12 +60,22 @@ $result->execute();
         
 
         <div class="col-md-3">
-        <button type="button" class="downloadBtn" style="text-align:center;" data-toggle="modal" data-target="#contactnow">
-            Contact Now !
-        </button>
+            <button type="button" distribution_id="<?php echo $row['id']; ?>" class="downloadBtn view_data" style="text-align:center;" >
+                Contact Now !
+            </button>
+        </div>
+        
+    </div>
+    
+</div>
+<?php } ?>  
+
+
+        
+
 
         <!-- Modal -->
-            <div class="modal fade" id="contactnow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="contactnow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -77,93 +84,61 @@ $result->execute();
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <h5><b>Shree Shirdar Seed Distribution Network</b></h5>
-                    <p class="text-muted">Kotihawa, Bhairahawa</p>
-                    <br>
-                    <p><b>Contact no</b></p>
-                    <p class="text-muted">984524224</p>
-                    <p><b>Owner Name</b></p>
-                    <p class="text-muted">Ram Chandra Tripathi</p>
-                    <br>
-                    <b><a href="#">Find in Map</a></b>
+                <div class="modal-body" id="distribution_data">
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 </div>
             </div>
-            </div>
-
         </div>
-    </div>
-</div>
 
-<div class="dCard">
-    <div class="row">
-
-        <div class="col-md-9">
-            <Table>
-                <tr>
-                    <td>
-                        <img src="images/p2.jpg" class="dImg" alt="">
-                    </td>
-                    <td>
-                        <h3 class="HeadersB">
-                            Dealers Name
-                        </h3>
-                        <p class="mcf">Location goes here</p>
-                    </td>
-                </tr>
-            </Table>
-        </div>
-        
-
-        <div class="col-md-3">
-        <button type="button" class="downloadBtn" style="text-align:center;" data-toggle="modal" data-target="#contactnow">
-            Contact Now !
-        </button>
-
-        <!-- Modal -->
-            <div class="modal fade" id="contactnow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Dealer Information</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5><b>Shree Shirdar Seed Distribution Network</b></h5>
-                    <p class="text-muted">Kotihawa, Bhairahawa</p>
-                    <br>
-                    <p><b>Contact no</b></p>
-                    <p class="text-muted">984524224</p>
-                    <p><b>Owner Name</b></p>
-                    <p class="text-muted">Ram Chandra Tripathi</p>
-                    <br>
-                    <b><a href="#">Find in Map</a></b>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-            </div>
-
-        </div>
-    </div>
-</div>
+      
 
 </div>
         </div>
     </div>
 </div>
     
-
-<script src="../js/master.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+<!-- <script src="../js/master.js"></script> -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+
+<script>  
+ $(document).ready(function(){  
+      $('.view_data').click(function(){  
+          console.log("button clicked");
+         
+
+          var distribution_id=$(this).attr("distribution_id");
+         
+          
+          $.ajax({
+              
+              url:"dataModal.php",
+              method:"POST",
+              data:{distribution_id:distribution_id},
+              success:function(data){
+                  $('#distribution_data').html(data);
+                  $('#contactnow').modal("show");
+
+               
+              }
+          });
+         
+         
+            
+        
+          
+          
+      });  
+});  
+   
+ </script>
+
+
 </body>
 </html>

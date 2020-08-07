@@ -177,7 +177,7 @@ else
                                         <form action="" method="POST" enctype="multipart/form-data">
 
                                         <label>Upload photo</label> <br>
-                                        <input type="file" name="files" placeholder="Choose File"><br><br>
+                                        <input type="file" name="files" placeholder="Choose File" required><br><br>
 
                                         <label for="">Add image caption</label>
                                         <input type="text" name="title" class="form-control col-md-6" required><br>

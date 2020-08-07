@@ -87,7 +87,7 @@ $result2->execute();
                 <h2 class="ResearchHead1">
                                     <?php echo $row2['title'] ?>
                 </h2>
-                <span><i class="fas fa-clock"></i> 22, July 2020</span>
+                <span><i class="fas fa-clock"></i><?php echo $row2['date'] ?></span>
 
                 <!-- images section  -->
                 <a href="Research_Details.php"></a><img src="images/research_images/<?php echo $row2['image']; ?>" alt="" class="img-fluid ongoingR">

@@ -56,7 +56,7 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
                 <h2>
                     <?php echo $data['title']; ?>
                 </h2>
-                <span><i class="fas fa-clock"></i> 22, July 2020</span>
+                <span><i class="fas fa-clock"></i><?php echo $data['date']; ?></span>
 
                 <!-- images section  -->
                 <img src="images/research_images/<?php echo $data['image']; ?>" alt="" class="img-fluid ongoingR">
@@ -80,28 +80,79 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
                     <h3>Research Gallery</h3>
                     <div class="row">
                         <div class="col-md-3 col-4">
-                            <img src="images/p4.jpg" alt="" class="rgImg img-fluid ">
+                            <img src="images/research_images/<?php echo $data['sub_image1']; ?>" alt="" class="rgImg img-fluid ">
                         </div>
                         <div class="col-md-3 col-4">
-                            <img src="images/p4.jpg" alt="" class="rgImg img-fluid ">
+                            <img src="images/research_images/<?php echo $data['sub_image2']; ?>" alt="" class="rgImg img-fluid ">
                         </div>
                         <div class="col-md-3 col-4">
-                            <img src="images/p4.jpg" alt="" class="rgImg img-fluid ">
+                            <img src="images/research_images/<?php echo $data['sub_image3']; ?>" alt="" class="rgImg img-fluid ">
                         </div>
                     </div>
                 </div>
 
                 <!-- Related content  -->
+                <?php 
+
+
+                        if(isset($_REQUEST['id']))
+                        {
+                        $qry1="select *from on_going_research ORDER BY RAND() limit 3 ";
+                        $result1=$conn->prepare($qry1);
+                        $result1->bindParam(1,$id1);
+                        $id1=$_REQUEST['id'];
+
+
+                        $result1->execute();
+                        
+                        }
+                        else
+                        {
+                        $qry1="select *from top_research ORDER BY RAND() limit 3";
+                        $result1=$conn->prepare($qry1);
+                        $result1->bindParam(1,$id1);
+                        $id1=$_REQUEST['ids'];
+
+
+                        $result1->execute();
+                        
+                        }
+
+                ?>
+
 
                 <div class="RealtedContent">
                     <h3>Related Content</h3>
                     <div class="row">
+                            <?php
+                                while($data1=$result1->fetch(PDO::FETCH_ASSOC))
+                                {
+
+                                
+                            ?>
                         <div class="col-md-4">
                             <div class="researchCard">
-                                <h5>Some Resarch program title goes here like this</h5>
-                                <a href="#">View Research Details</a>
+                                <h5><?php echo $data1['title']; ?></h5>
+                                <?php if(isset($_REQUEST['id'])) 
+                                {
+                                ?>
+                                
+                                    <a href="Research_Details.php?id=<?php echo $data1['id'] ?>">View Research Details</a>
+                                <?php
+                                }
+                                else
+                                {
+                                ?>
+                                    <a href="Research_Details.php?ids=<?php echo $data1['id'] ?>">View Research Details</a>
+
+                                <?php 
+                                    }
+                                ?>  
+                                
+
                             </div>
                         </div>
+                                <?php } ?>
 
                         <div class="col-md-4">
                             <div class="researchCard">
