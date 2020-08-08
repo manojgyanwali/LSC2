@@ -1,6 +1,7 @@
 <?php 
 include('includes/dbcon.php');
 
+
 $qry="select *from news_and_events ORDER BY id DESC limit 1";
 $result=$conn->prepare($qry);
 $result->execute();
@@ -116,8 +117,20 @@ $result2->execute();
 <!-- all news and event section  -->
 <?php 
 include('includes/dbcon.php');
+$limit=8;
 
-$qry3="select *from news_and_events ORDER BY id DESC";
+if(isset($_REQUEST['page']))
+{
+    $page=$_REQUEST['page'];
+
+}
+else
+{
+    $page=1;
+}
+$offset=($page-1) * $limit;
+
+$qry3="select *from news_and_events ORDER BY id DESC LIMIT {$offset},{$limit}";
 $result3=$conn->prepare($qry3);
 $result3->execute();
 
@@ -176,20 +189,61 @@ $result3->execute();
 
 <!-- pagination starts -->
 
+<?php
+$sql="select *from news_and_events";
+$results=$conn->prepare($sql);
+$results->execute();
+if($results->rowCount()>0)
+{
+
+    $total_records=$results->rowCount();
+    
+    $total_page= ceil($total_records / $limit);
+    
+?>
 <nav aria-label="Page navigation example" style="margin-top:40px; margin-bottom:90px;">
   <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
+  <?php if($page>1) 
+  {
+    ?>
+       <li class="page-item ">
+       <a class="page-link" href="news.php?page=<?php echo ($page-1) ?>" >Prev</a>
+     </li>
+<?php 
+  } ?>
+    
+<?php
+    for($i=1;$i<=$total_page; $i++)
+    {
+        if($i==$page)
+        {
+            $active="active";
+        }
+        else
+        {
+            $active="";
+        }
+        
+?>
+ <li class="page-item <?php echo $active ?>"><a class="page-link" href="news.php?page=<?php echo  $i ?>"><?php  echo $i ?></a></li>
+<?php
+    }
+    if($total_page >$page)
+    {
+?>
     <li class="page-item">
-      <a class="page-link" href="#">Next</a>
+      <a class="page-link" href="news.php?page=<?php echo ($page+1) ?>">Next</a>
     </li>
+    <?php }?>
+
   </ul>
-</nav>
+    </nav> 
+    <?php 
+    
+}
+
+?>
+
 
 <div class="footer">
     <?php include('footer.html') ?>

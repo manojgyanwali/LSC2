@@ -1,3 +1,50 @@
+<?php 
+ include('../includes/dbcon.php');
+ session_start();
+
+
+if(isset($_REQUEST['login']))
+{
+   
+$qry="select *from users_signup where fullname=? and password=?";
+$result=$conn->prepare($qry);
+$result->bindparam(1,$username);
+$result->bindparam(2,$password);
+
+
+$username=$_REQUEST['email'];
+$password=$_REQUEST['password'];
+$result->execute();
+ if($result->rowCount()>0)
+ {
+    $_SESSION['is_login']=true;
+    header('location:home.php');
+    
+
+ }
+ else
+ {
+    echo "username and password not match";
+ }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,69 +81,48 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/subnewsImg.png);">
+				<div class="login100-form-title" style="background-image: url(images/farmers.jpg);">
 					<span class="login100-form-title-1">
-						Sign Up
+						Login
 					</span>
 					<a href="index.php" class="normalA">
 						<p class="text-center" style="color: white;">Home</p>
 					</a>
 				</div>
 
-				<form class="login100-form validate-form">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Full name is required">
-						<span class="label-input100">Full Name</span>
+				<form action="" method="POST" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
 						<input class="input100" type="text" name="username" placeholder="Enter username">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
-						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="username" placeholder="Enter Email">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Address is required">
-						<span class="label-input100">Address</span>
-						<input class="input100" type="text" name="username" placeholder="Enter Address">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Contact number is required">
-						<span class="label-input100">Contact Number</span>
-						<input class="input100" type="text" name="username" placeholder="Enter contact number">
-						<span class="focus-input100"></span>
-					</div>
-
-
 					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
-						<span class="focus-input100"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
-						<span class="label-input100">Confirm Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Enter password">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
-
-
-							<div>
-								<a href="login.html" class="txt1">
-									Already a member ?
-								</a>
-							</div>
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
 						</div>
 
-						<div class="container-login100-form-btn">
-							<button class="login100-form-btn">
-								Sign up
-							</button>
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
 						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button type="submit" name="login" class="login100-form-btn">
+							Login
+						</button>
+					</div>
 				</form>
 			</div>
 		</div>

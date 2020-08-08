@@ -1,3 +1,58 @@
+<?php 
+session_start();
+include('includes/dbcon.php');
+if(isset($_REQUEST['sign_in']))
+{
+	
+
+$name=$_REQUEST['username'];
+$address=$_REQUEST['address'];
+$phone=$_REQUEST['phone'];
+$email=$_REQUEST['email'];
+$password=$_REQUEST['password'];
+$c_password=$_REQUEST['c_password'];
+if($password!=$c_password)
+{
+	$message= '<div class="alert alert-warning col-md-12" role="alert">password and confirm password do not match</div>';
+	$_SESSION['message']=$message;
+}
+else
+{
+	$qry="insert into users_signup(full_name,email,address,contact_no,password,c_password) values (?,?,?,?,?,?)";
+$result=$conn->prepare($qry);
+$result->bindParam(1,$name,PDO::PARAM_STR);
+$result->bindParam(2,$email,PDO::PARAM_STR);
+$result->bindParam(3,$address,PDO::PARAM_STR);
+$result->bindParam(4,$phone,PDO::PARAM_STR);
+$result->bindParam(5,$password,PDO::PARAM_STR);
+$result->bindParam(6,$c_password,PDO::PARAM_STR);
+
+
+
+$result->execute();
+$message='<div class="alert alert-success" role="alert">Sucessfully sigin-in now log-in to continue</div>';
+$_SESSION['message']=$message;
+}
+
+
+
+
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,48 +89,73 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/farmers.jpg);">
+				<div class="login100-form-title" style="background-image: url(images/subnewsImg.png);">
 					<span class="login100-form-title-1">
-						Login
+						Sign Up
 					</span>
 					<a href="index.php" class="normalA">
 						<p class="text-center" style="color: white;">Home</p>
 					</a>
 				</div>
 
-				<form class="login100-form validate-form">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
+				<form action="" method="POST" class="login100-form validate-form">
+				<span><?php if(isset($message)){ echo $_SESSION['message'];} ?></span>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Full name is required">
+						<span class="label-input100">Full Name</span>
 						<input class="input100" type="text" name="username" placeholder="Enter username">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="email" placeholder="Enter Email">
 						<span class="focus-input100"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Address is required">
+						<span class="label-input100">Address</span>
+						<input class="input100" type="text" name="address" placeholder="Enter Address">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Contact number is required">
+						<span class="label-input100">Contact Number</span>
+						<input class="input100" type="text" name="phone" placeholder="Enter contact number">
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
+						<span class="label-input100">Confirm Password</span>
+						<input class="input100" type="password" name="c_password" placeholder="Enter password">
+						<span class="focus-input100"></span>
+						
+					</div>
+					
+
 					<div class="flex-sb-m w-full p-b-30">
 						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
+
+
+							<div>
+								<a href="login.php" class="txt1">
+									Already a member ?
+								</a>
+							</div>
 						</div>
 
-						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
-							</a>
+						<div class="container-login100-form-btn">
+							<button type="submit" name="sign_in" class="login100-form-btn">
+								Sign up
+							</button>
 						</div>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
 				</form>
 			</div>
 		</div>

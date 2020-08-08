@@ -58,8 +58,8 @@ $language='nep';
                     <li><a href=""><i class="fa fa-twitter"></i></a></li>
 
 
-                    <a href="signup.html"><button class="customButtonTop">Sign UP</button></a>
-                    <a href="login.html"><button class="customButtonTop">Log in</button></a>
+                    <a href="signup.php"><button class="customButtonTop">Sign UP</button></a>
+                    <a href="login.php"><button class="customButtonTop">Log in</button></a>
                     
                     <button class="customButtonTop dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Language
