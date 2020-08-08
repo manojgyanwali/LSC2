@@ -247,7 +247,7 @@ if(isset($_REQUEST['delivered_order']))
                                                    
                                                     echo $row2['product_image'];
 
-                                                    ?>" alt="" style="width:50px;">
+                                                    ?>" alt="" style="width:50px; height:50px;">
                                                 </td>
                                                 <td><?php echo $row2['product_name']; ?></td>
                                                 <td>
@@ -305,7 +305,7 @@ if(isset($_REQUEST['delivered_order']))
                                             <th scope="row">1</th>
                                             
                                             <td>
-                                                <img src="../product_portfolio_image/<?php echo $data4['product_image'];?>" alt="pic" style="width:50px;">
+                                                <img src="../product_portfolio_image/<?php echo $data4['product_image'];?>" alt="pic" style="width:50px; height:50px;">
                                             </td>
                                             <td>
                                                 <?php echo $data4['product_name'];
@@ -385,7 +385,7 @@ if(isset($_REQUEST['delivered_order']))
                                             <tr>
                                             <th scope="row">1</th>
                                             <td>
-                                                <img src="../product_portfolio_image/<?php echo $row5['image'];?>" alt="pic" style="width:50px;">
+                                                <img src="../product_portfolio_image/<?php echo $row5['image'];?>" alt="pic" style="width:50px;height:50px;">
                                             </td>
                                                                     
                                             <td>

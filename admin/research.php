@@ -199,6 +199,15 @@ $image_name2=$_FILES['image2']['name'];
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#completeR" role="tab" aria-controls="profile" aria-selected="false">Complete Research</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vtopR" role="tab" aria-controls="profile" aria-selected="false">Edit Top </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vongoingR" role="tab" aria-controls="profile" aria-selected="false">Edit Ongoing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vcompleteR" role="tab" aria-controls="profile" aria-selected="false">Edit complete</a>
+                        </li>
                        
                         
                     </ul>
@@ -289,11 +298,78 @@ $image_name2=$_FILES['image2']['name'];
                                     <button type="submit" name="add_complete_research" class="btn btn-info">Publish complete research report</button>
                                 </form>
                                 </div>
+                            </div>
 
+                            <!-- edit top research  -->
+                            <div class="tab-pane fade" id="vtopR" role="tabpane1" aria-labelledby="view-eomployee">
+                                <h4 style="margin-top:30px;margin-left:20px;">View Top Research</h4>
+                                <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Researh title</th>
+                                            <th scope="col">Resarch img</th>
+                                            <th scope="col">EDIT | DELETE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th scope="row">1</th>
+                                            <td>My Research Titl</td>
+                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
+                                            <td>
+                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
+                                            </td>
+                                        </tbody>
+                                </table>
+                            </div>
 
+                            <!-- edit ongoing research  -->
+                            <div class="tab-pane fade" id="vongoingR" role="tabpane1" aria-labelledby="view-eomployee">
+                                <h4 style="margin-top:30px;margin-left:20px;">View Ongoing Research</h4>
+                                <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Researh title</th>
+                                            <th scope="col">Resarch img</th>
+                                            <th scope="col">EDIT | DELETE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th scope="row">1</th>
+                                            <td>My Research Titl</td>
+                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
+                                            <td>
+                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
+                                            </td>
+                                        </tbody>
+                                </table>
+                            </div>
 
-                               
-
+                            <!-- edit complete research  -->
+                            <div class="tab-pane fade" id="vcompleteR" role="tabpane1" aria-labelledby="view-eomployee">
+                                <h4 style="margin-top:30px;margin-left:20px;">View finished Research</h4>
+                                <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Researh title</th>
+                                            <th scope="col">Resarch img</th>
+                                            <th scope="col">EDIT | DELETE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th scope="row">1</th>
+                                            <td>My Research Titl</td>
+                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
+                                            <td>
+                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
+                                            </td>
+                                        </tbody>
+                                </table>
                             </div>
                             
                         </div>

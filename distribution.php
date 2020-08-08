@@ -60,7 +60,7 @@ $result->execute();
         
 
         <div class="col-md-3">
-            <button type="button" distribution_id="<?php echo $row['id']; ?>" class="downloadBtn view_data" style="text-align:center;" >
+            <button type="button" distribution_id="<?php echo $row['id']; ?>" class="downloadBtn view_data" style="text-align:center;"  >
                 Contact Now !
             </button>
         </div>

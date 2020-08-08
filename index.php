@@ -292,15 +292,111 @@ $row3=$result3->fetch(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+    <!-- testimonial begins  -->
+
     <div class="testimonials">
-    <div class="container">
-        
+        <div class="layert">
+            <div class="upperContent">
+               <h2 class="text-center font-weight-light" style="color:white;">Happy Customers About Us</h2>
+               <p class="text-center" style="color:#FFE77B;"><i>Testimonials</i></p>
+            </div>
+        <div class="container">
+                <div class="testimonialCard">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="img-container">
+                                <img src="images/rails.jpg" id="tImg" alt="" style=" border-radius:2220px;" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p id="mytext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type </p>
+                            <br>
+                            <h4 id="name"> Ashish Khanal</h4>
+                            <p class="text-muted" id="jobtitle"><i>Farmer</i></p>
+                        </div>
+                    </div>
+
+                    <div class="tbuttons text-center">
+                        <div class="row justify-content-center">
+                        
+                            <i class="prev fas fa-angle-left"></i>
+                            <i class="next fas fa-angle-right"></i>
+                        
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
     </div>
+
+    <!-- connect with us  -->
+    <div class="socialConnect">
+        <div class="container">
+            <h3 class="text-center font-weight-bold">FOLLOW US THROUGH SOCIAL MEDIA</h3>
+            <div class="socialmedia">
+                <a href="#" class="normalA">
+                <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="#" class="normalA">
+                <i class="fab fa-instagram-square"></i>
+                </a>
+                <a href="#" class="normalA">
+                <i class="fab fa-twitter-square"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- contact us  -->
+    <div class="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="indexcontent">
+                    <h1 class="HeadersB text-center">Let's Connect</h1>
+                    <p class="text-center"><i>contact us</i></p>
+                </div>                    
+                    <form action="">
+                    
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                               <input type="text" name="name"  class="form-control form-control-lg" id="inputName" placeholder="Full Name" required>
+                           </div>
+                           <div class="form-group col-md-6">
+                               <input type="text" name="address" class="form-control form-control-lg" id="inputAddress" placeholder="Address" required>
+                           </div>
+                        </div>
+                       
+
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                               <input type="email" name="email" class="form-control form-control-lg" id="inputEmail" placeholder="Email" required>
+                           </div>
+                           <div class="form-group col-md-6">
+                               <input type="text" name="phone" class="form-control form-control-lg" id="inputPhone" placeholder="Phone" required>
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                           <textarea  name="message" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="3" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                           <button  type="submit" name="add_message" class="btn btn-info">Submit</button>
+                        </div>
+                   </form>
+                </div>
+        </div>
+            </div>
     </div>
 
     <div class="footer">
         <?php include('footer.html')?>
     </div>
+
+    <script src="js/master.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>

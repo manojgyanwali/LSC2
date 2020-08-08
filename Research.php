@@ -22,15 +22,9 @@
         <div class="row">
             <div class="col-md-8">
                 <h2 class="HeadersB">Research & Development</h2>
+                <p class="text-muted">Explore all top, ongoing and complete research programs by lumbini seed company</p>
             </div>
-                <div class="col-md-4">
-                    <div class="input-group mb-3" id="searchSection">
-                        <input type="text" class="form-control" placeholder="What are you looking for?">
-                        <div class="input-group-prepend">
-                           <button class="input-group-text" id="search" style="background-color:#2D5F2E;color:white;"><i class="fa fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
+                
         </div>
     </div>
 </div>
