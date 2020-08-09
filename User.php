@@ -1,3 +1,47 @@
+<?php
+include('includes/dbcon.php');
+session_start();
+if(isset($_SESSION['is_login']))
+{
+  $user_phone=  $_SESSION['phone'];
+
+  
+}
+else
+{
+    header('location:login.php');
+}
+
+
+ 
+
+$qry="select *from users_signup where  contact_no=?   ";
+$result=$conn->prepare($qry);
+$result->bindParam(1,$user_phone);
+
+
+
+
+$result->execute();
+$data=$result->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+if(isset($_REQUEST['logout']))
+{
+    
+
+session_destroy();
+header('location:index.php');
+}
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,11 +68,14 @@
                 </div>
 
                 <div class="col-md-4" style="padding-top: 10px;">
-                    <a href="index.php"><button class="btn btn-secondary">Logout</button></a>
+                    <form action="" method="POST">
+                        <button type="submit" name="logout" class="btn btn-secondary">Logout</button>
+                    
                     <a href="setting.php">
                         <button class="btn btn-info"><i class="fas fa-cog"></i> Settings
                         </button>
                     </a>
+                    </form>
                 </div>
 
 
@@ -45,8 +92,8 @@
                     <img src="images/user.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-7">
-                    <h1 class="font-weight-light">Aashish Khanal</h1>
-                    <p class="tex-muted">ashish25khanal@gmail.com</p>
+                    <h1 class="font-weight-light"><?php echo $data['full_name'] ?></h1>
+                    <p class="tex-muted"><?php echo $data['email'] ?></p>
 
                     <table>
                         <tr>
@@ -55,9 +102,9 @@
                             <th width="30%">Contact No</th>
                         </tr><br>
                         <tr>
-                            <td width="30%">Ashish_khanal</td>
-                            <td width="30%">Maitidevi, Kathmandu</td>
-                            <td width="30%">938489484 </td>
+                            <td width="30%"><?php echo $data['full_name'] ?></td>
+                            <td width="30%"><?php echo $data['address'] ?></td>
+                            <td width="30%"><?php echo $data['contact_no'] ?> </td>
                         </tr>
                     </table>
 
@@ -77,6 +124,12 @@
     <div class="userEnd">
         <div class="container">
             <h4>My Order</h4>
+                                <?php 
+                                $qry1="select *from customer_data,product_portfolio,users_signup  where  customer_data.product_id=product_portfolio.id and customer_data.users_signup_id=users_signup.id and users_signup.id={$_SESSION['users_id']} ";
+                                $result1=$conn->prepare($qry1);
+                                    
+                                $result1->execute();
+                                ?>
 
             <table class="table table-striped">
                 <thead>
@@ -88,18 +141,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                            <?php 
+                            while( $data1=$result1->fetch(PDO::FETCH_ASSOC))
+                                {
+                            ?>
+
                     <tr>
-                        <td><img src="images/subnewsImg.png" style="height: 50px; width: 80%;" alt="" class="img-fluid">
+                        <td><img src="product_portfolio_image/<?php echo $data1['product_image']; ?>" style="height: 50px; width: 80%;" alt="" class="img-fluid">
                         </td>
-                        <td>Dhan 23</td>
+                        <td><?php echo $data1['product_name']; ?></td>
                         <td class="delivery">not Delivered</td>
                         <td>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View
-                                Details</button>
+                            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">View
+                                Details</button> -->
+                                <button class="btn btn-primary view_data" user_id="<?php echo $data1['id']; ?>"  >View Details</button>
                         </td>
-
-
                     </tr>
+                                <?php } ?>
                 </tbody>
             </table>
         </div>
@@ -115,8 +173,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="userinfo" style="background-color: #caf0f8;padding:20px; border-radius: 10px;">
+                 <div class="modal-body" id="user_data">
+                    <!-- <div class="userinfo" style="background-color: #caf0f8;padding:20px; border-radius: 10px;">
                         <div class="row align-items-center">
                             <div class="col-md-6">
                                 <h5 class="font-weight-bold">Ordered Person</h5>
@@ -154,7 +212,7 @@
                                 <td>40 kg</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>.. -->
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger">Cancel Order</button>
@@ -167,13 +225,71 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> 
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
 
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+    <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script> -->
+  
+<!-- <script src="../bootstrap/js/bootstrap.min.js"></script>
+ 
+<script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script> --> 
+
+ 
+
+    <script>  
+ $(document).ready(function(){  
+      $('.view_data').click(function(){  
+          var user_id=$(this).attr("user_id");
+
+          
+         
+          $.ajax({
+              url:"dataModal.php",
+              method:"POST",
+              data:{user_id:user_id},
+              success:function(data){
+                  $('#user_data').html(data);
+                  $('#exampleModal').modal("show");
+
+               
+              }
+          });
+         
+            
+        
+          
+          
+      });  
+
+
+
+    //   $('.previous_view_data').click(function(){  
+    //       var customer_id1=$(this).attr("ids1");
+         
+    //       $.ajax({
+    //           url:"dataModal.php",
+    //           method:"POST",
+    //           data:{customer_id1:customer_id1},
+    //           success:function(data){
+    //               $('#previous_customer_details').html(data);
+    //               $('#previousModal').modal("show");
+
+               
+    //           }
+    //       });
+         
+            
+        
+          
+          
+    //   });  
+ });  
+ </script>
 
 </body>
 

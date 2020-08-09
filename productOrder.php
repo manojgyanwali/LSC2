@@ -93,6 +93,8 @@ $row=$result->fetch(PDO::FETCH_ASSOC)
                             <span id="phoneerror"></span>
                             <label for="Email">Email address</label>
                             <input type="email"  class="form-control" id="Email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="hidden" value="<?php if(isset($_SESSION['users_id'])) {echo $_SESSION['users_id'];} ?>"   name="users_id">
+
                             <button type="submit" name="submit" class="btnConfirm"> Confirm Order</button>
                         </form>
                       

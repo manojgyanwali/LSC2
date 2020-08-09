@@ -1,5 +1,6 @@
 <?php 
-include('language.php');
+
+ include('language.php');
 include('includes/dbcon.php');
 $qry9="select *from category";
 $result9=$conn->prepare($qry9);
@@ -57,9 +58,21 @@ $language='nep';
                     <li><a href=""><i class="fa fa-instagram"></i></a></li>
                     <li><a href=""><i class="fa fa-twitter"></i></a></li>
 
+                    <?php if(isset($_SESSION['is_login']))
+                    { 
+                    ?>  
+                     <a href="User.php"><?php echo $_SESSION['name'] ?></a>
 
-                    <a href="signup.php"><button class="customButtonTop">Sign UP</button></a>
-                    <a href="login.php"><button class="customButtonTop">Log in</button></a>
+                     <?php } 
+                   else
+                   {
+                      ?>
+                      <a href="signup.php"><button class="customButtonTop">Sign UP</button></a>
+                      <a href="login.php"><button class="customButtonTop">Log in</button></a>
+                       <?php
+                    }
+                    ?>
+                    
                     
                     <button class="customButtonTop dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Language

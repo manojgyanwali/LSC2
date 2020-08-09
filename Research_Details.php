@@ -55,8 +55,10 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
     <div class="container">
                 <h2>
                     <?php echo $data['title']; ?>
+                   
                 </h2>
-                <span><i class="fas fa-clock"></i><?php echo $data['date']; ?></span>
+                <span><i class="fas fa-clock"></i><?php echo $data['date']; ?></span></br>
+                
 
                 <!-- images section  -->
                 <img src="images/research_images/<?php echo $data['image']; ?>" alt="" class="img-fluid ongoingR">

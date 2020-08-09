@@ -79,7 +79,7 @@ $result2->execute();
             
 
                 <h2 class="ResearchHead1">
-                                    <?php echo $row2['title'] ?>
+                        <?php echo $row2['title'] ?>
                 </h2>
                 <span><i class="fas fa-clock"></i><?php echo $row2['date'] ?></span>
 

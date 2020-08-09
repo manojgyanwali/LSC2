@@ -1,30 +1,45 @@
 <?php 
- include('../includes/dbcon.php');
+ include('includes/dbcon.php');
  session_start();
 
 
 if(isset($_REQUEST['login']))
 {
    
-$qry="select *from users_signup where fullname=? and password=?";
+$qry="select *from users_signup where contact_no=?  and password=?";
 $result=$conn->prepare($qry);
-$result->bindparam(1,$username);
+$result->bindparam(1,$phone);
+
 $result->bindparam(2,$password);
 
 
-$username=$_REQUEST['email'];
+
+
+
+$phone=$_REQUEST['phone'];
 $password=$_REQUEST['password'];
 $result->execute();
+
  if($result->rowCount()>0)
  {
-    $_SESSION['is_login']=true;
-    header('location:home.php');
+	  $_SESSION['is_login']=true;
+	  $_SESSION['phone']=$phone;
+	
+	$data=$result->fetch(PDO::FETCH_ASSOC);
+	$_SESSION['name']= $data['full_name'];
+	$_SESSION['users_id']=$data['id'];
+	
+
+	
+	
+     header('location:index.php');
     
 
  }
  else
  {
-    echo "username and password not match";
+ 	$message= '<div class="alert alert-warning col-md-12" role="alert">password and username do not match</div>';
+	
  }
 
 
@@ -90,10 +105,12 @@ $result->execute();
 					</a>
 				</div>
 
-				<form action="" method="POST" class="login100-form validate-form">
+				<form action="" method="POST" class="login100-form validate-form" autocomplete="off">
+				<?php if(isset($message)){echo $message;} ?>
+					
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<span class="label-input100">Phone</span>
+						<input class="input100" type="text" name="phone" placeholder="Enter mobile number">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -123,6 +140,7 @@ $result->execute();
 							Login
 						</button>
 					</div>
+					
 				</form>
 			</div>
 		</div>

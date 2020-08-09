@@ -7,6 +7,7 @@ $result->bindParam(1,$id);
 $id=$_REQUEST['id'];
 $_SESSION['id']=$id;
 
+
 $result->execute();
 $data=$result->fetch(PDO::FETCH_ASSOC);
 

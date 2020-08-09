@@ -254,9 +254,9 @@ $image_name2=$_FILES['image2']['name'];
                                 <div class="container">
                                 <form action="" method="POST" enctype="multipart/form-data">
                                 <label for="">Add Research title</label>
-                                    <input type="text" name="title" class="form-control col-md-6"><br>
+                                    <input type="text" name="title" class="form-control col-md-6" required><br>
                                     <label><b>Upload Research Highlight Image (250*250)</b></label> <br>
-                                        <input type="file" name="image" placeholder="Choose File"><br><br>
+                                        <input type="file" name="image" placeholder="Choose File" required><br><br>
 
                                         <p><b><i>Sub Images</i></b></p>
 
@@ -274,7 +274,7 @@ $image_name2=$_FILES['image2']['name'];
                                         </div> <br>
 
                                     <label for="">Add description</label>
-                                        <textarea class="form-control" name="description" id="" cols="20" rows="10"></textarea>
+                                        <textarea class="form-control" name="description" id="" cols="20" rows="10" required></textarea>
 
                                    
 
@@ -292,15 +292,19 @@ $image_name2=$_FILES['image2']['name'];
                                 <div class="container">
                                 <form action="" method="POST" enctype="multipart/form-data">
                                     <label for="">Add Research title</label>
-                                    <input type="text" name="title" class="form-control col-md-6"><br>
+                                    <input type="text" name="title" class="form-control col-md-6" required><br>
                                     <label><b>Upload Research Report PDF file</b></label> <br>
-                                    <input type="file" name="file" placeholder="Choose File"><br><br>
+                                    <input type="file" name="file" placeholder="Choose File" required><br><br>
                                     <button type="submit" name="add_complete_research" class="btn btn-info">Publish complete research report</button>
                                 </form>
                                 </div>
                             </div>
 
                             <!-- edit top research  -->
+                            <?php $qry1="select *from top_research ";
+                                    $result1=$conn->prepare($qry1);
+                                    $result1->execute();
+                                ?>
                             <div class="tab-pane fade" id="vtopR" role="tabpane1" aria-labelledby="view-eomployee">
                                 <h4 style="margin-top:30px;margin-left:20px;">View Top Research</h4>
                                 <table class="table table-striped">
@@ -313,18 +317,29 @@ $image_name2=$_FILES['image2']['name'];
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <th scope="row">1</th>
-                                            <td>My Research Titl</td>
-                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
-                                            <td>
-                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
-                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
-                                            </td>
+                                                <?php while($row1=$result1->fetch(PDO::FETCH_ASSOC))
+                                                        {
+                                                ?>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td><?php echo $row1['title']; ?></td>
+                                                    <td><img src="../images/research_images/<?php echo $row1['image']; ?>" alt="" style="width:50px; height:50px;"></td>
+                                                    <td>
+                                                    <a  href="edit_top_research.php?id=<?php echo $row1['id']; ?>" ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                                    <a onclick=" return validate()" href="delete_top_research.php?id=<?php echo $row1['id']; ?>" ><i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i></a>
+                                                    </td>
+                                                </tr>
+
+                                                <?php } ?>
                                         </tbody>
                                 </table>
                             </div>
 
                             <!-- edit ongoing research  -->
+                                <?php $qry2="select *from on_going_research ";
+                                    $result2=$conn->prepare($qry2);
+                                    $result2->execute();
+                                ?>
                             <div class="tab-pane fade" id="vongoingR" role="tabpane1" aria-labelledby="view-eomployee">
                                 <h4 style="margin-top:30px;margin-left:20px;">View Ongoing Research</h4>
                                 <table class="table table-striped">
@@ -337,37 +352,56 @@ $image_name2=$_FILES['image2']['name'];
                                             </tr>
                                         </thead>
                                         <tbody>
+
+                                            <?php while($row2=$result2->fetch(PDO::FETCH_ASSOC))
+                                                        {
+                                                ?>
+                                            <tr>
                                             <th scope="row">1</th>
-                                            <td>My Research Titl</td>
-                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
+                                            <td><?php echo $row2['title']; ?></td>
+                                            <td><img src="../images/research_images/<?php echo $row2['image']; ?>" alt="" style="width:50px; height:50px;"></td>
                                             <td>
-                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
-                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
+                                            <a  href="edit_on_going_research.php?id=<?php echo $row2['id']; ?>"><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                            <a onclick=" return validate()" href="delete_on_going_research.php?id=<?php echo $row2['id']; ?>"><i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i></a>
                                             </td>
+                                            </tr>
+                                                        <?php } ?>
                                         </tbody>
                                 </table>
                             </div>
 
                             <!-- edit complete research  -->
+                            <?php $qry3="select *from complete_research ";
+                                    $result3=$conn->prepare($qry3);
+                                    $result3->execute();
+                                ?>
                             <div class="tab-pane fade" id="vcompleteR" role="tabpane1" aria-labelledby="view-eomployee">
                                 <h4 style="margin-top:30px;margin-left:20px;">View finished Research</h4>
                                 <table class="table table-striped">
                                         <thead>
+                                                
                                             <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Researh title</th>
                                             <th scope="col">Resarch img</th>
                                             <th scope="col">EDIT | DELETE</th>
                                             </tr>
+                                                      
                                         </thead>
                                         <tbody>
+                                        <?php while($row3=$result3->fetch(PDO::FETCH_ASSOC))
+                                                        {
+                                                ?>
+                                        <tr>
                                             <th scope="row">1</th>
-                                            <td>My Research Titl</td>
-                                            <td><img src="../images/farmers.jpg" alt="" style="width:50px; height:50px;"></td>
+                                            <td><?php echo $row3['title'] ?></td>
+                                            <td><img src="../images/complete_research_file/<?php echo $row3['file']; ?>" alt="" style="width:50px; height:50px;"></td>
                                             <td>
-                                            <a data-toggle="tab" href="#topR " ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
-                                            <i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i>
+                                            <a  href="edit_complete_research.php?id=<?php echo $row3['id']; ?>" ><i class="fa fa-edit" style="font-size:larger; padding-right:5px;"></i></a>  | 
+                                            <a onclick=" return validate()"  href="delete_complete_research.php?id=<?php echo $row3['id']; ?>"><i class="fas fa-trash-alt" style="font-size:larger;color:red; padding-left:5px;"></i></a>
                                             </td>
+                                        </tr>
+                                        <?php  } ?>
                                         </tbody>
                                 </table>
                             </div>
@@ -383,5 +417,19 @@ $image_name2=$_FILES['image2']['name'];
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
 <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+<script>
+function validate()
+{
+    var sure=confirm("Are you sure wants to delete this data ?");
+    if(sure==true)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+</script>
 </body>
 </html>
