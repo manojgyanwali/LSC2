@@ -61,7 +61,7 @@ $language='nep';
                     <?php if(isset($_SESSION['is_login']))
                     { 
                     ?>  
-                     <a href="User.php"><?php echo $_SESSION['name'] ?></a>
+                     <a href="User.php"><button class="customButtonTop"><i class="fas fa-user-circle"></i> Profile</button></a>
 
                      <?php } 
                    else

@@ -16,7 +16,6 @@ $result->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribution Network</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" href="css/header.css">
@@ -43,26 +42,27 @@ $result->execute();
     <div class="row">
 
         <div class="col-md-9">
-            <Table>
-                <tr>
-                    <td>
-                        <img src="images/distribution_network_images/<?php echo $row['image'] ?>" class="dImg" alt="">
-                    </td>
-                    <td>
+            <div class="row">
+                <div class="col-md-3 dImg">
+                    <img src="images/distribution_network_images/<?php echo $row['image'] ?>" class="dImg" alt="" style="padding:10px 0 ;">
+                </div>
+                <div class="col-md-6">
                         <h3 class="HeadersB">
                            <?php echo $row['name'] ?>
                         </h3>
-                        <p class="mcf"><?php echo $row['google_map_address'] ?></p>
-                    </td>
-                </tr>
-            </Table>
+                        <p class="mcf"><?php echo $row['location'] ?></p>
+                </div>
+                <div class="col-md-9">
+
+                </div>
+            </div>
+            
         </div>
         
 
         <div class="col-md-3">
-            <button type="button" distribution_id="<?php echo $row['id']; ?>" class="downloadBtn view_data" style="text-align:center;"  >
-                Contact Now !
-            </button>
+        <button class="btn btn-primary view_data" distribution_id="<?php echo $row['id']; ?>" >Contact Now !</button>
+            
         </div>
         
     </div>
@@ -102,7 +102,7 @@ $result->execute();
 </div>
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
+ 
 <!-- <script src="../js/master.js"></script> -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
@@ -118,7 +118,7 @@ $result->execute();
           
           $.ajax({
               
-              url:"dataModal.php",
+              url:"admin/dataModal.php",
               method:"POST",
               data:{distribution_id:distribution_id},
               success:function(data){

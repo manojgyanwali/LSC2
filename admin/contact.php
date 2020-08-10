@@ -43,7 +43,18 @@ else
                     </div>
                     <br>
                     <div class="contactTable">
-                        <p>View All the inbox messages from contact us menu here</p>
+                        <h5 style="margin:20px 0 10px 20px;float:left;">Inbox messages from contact us menu here</h5>
+                        <!-- search section  -->
+                        <div class="col-md-6" style="float:right; margin-top:20px">
+                                    <form action="product_search.php" method="POST" id="forms">
+                                        <div class="input-group mb-3" id="searchSection">
+                                            <input type="text" name="search_box" class="form-control" placeholder="What are you looking for?">
+                                            <div class="input-group-prepend">
+                                            <button type="submit" class="input-group-text" name="search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
 
 
                                 <table class="table table-striped">

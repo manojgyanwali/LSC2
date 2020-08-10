@@ -41,14 +41,12 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
             <!-- product image section  -->
             <div class="col-md-5">
             <!-- The expanding image container -->
-                <div class="container img-container">
+                
                     <!-- Expanded image -->
-                    <img id="expandedImg"  src="product_portfolio_image/<?php echo $data['product_image']; ?>" style="width:100%; height:350px;">
-                </div>
-
-                                                
+                    <img id="expandedImg"  src="product_portfolio_image/<?php echo $data['product_image']; ?>" style="width:100%; height:350px;" class="img-fluid">
+                                     
                     <!-- The grid: four columns -->
-                    <div class="container sample-img">
+                    <div class="sample-img">
                         <div class="row">
                             <div class="col-md-3 col-3">
                                 <img src="product_portfolio_image/<?php echo $data['product_image']; ?>" style="height:80px; width:100%;" alt="" class="img-fluid" onclick="myFunction(this);">
