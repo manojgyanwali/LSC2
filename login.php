@@ -1,9 +1,9 @@
 <?php 
- include('includes/dbcon.php');
- session_start();
+include('includes/dbcon.php');
+session_start();
 
 
-if(isset($_REQUEST['login']))
+if(isset($_REQUEST['user_login']))
 {
    
 $qry="select *from users_signup where contact_no=?  and password=?";
@@ -22,7 +22,7 @@ $result->execute();
 
  if($result->rowCount()>0)
  {
-	  $_SESSION['is_login']=true;
+	  $_SESSION['user_login']=true;
 	  $_SESSION['phone']=$phone;
 	
 	$data=$result->fetch(PDO::FETCH_ASSOC);
@@ -136,7 +136,7 @@ $result->execute();
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button type="submit" name="login" class="login100-form-btn">
+						<button type="submit" name="user_login" class="login100-form-btn">
 							Login
 						</button>
 					</div>

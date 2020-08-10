@@ -166,93 +166,14 @@ if(isset($_REQUEST["contact_id"]))
 }
 
 
-}  
-
-if(isset($_REQUEST["distribution_id"]))
-{
-    $qry7="select *from distributon_network where id={$_REQUEST['distribution_id']}";
-    $result7=$conn->prepare($qry7);
-    $result7->execute();
-    while($row7=$result7->fetch(PDO::FETCH_ASSOC))
-    {
-?>
-<h5><b>Shree Shirdar Seed Distribution Network</b></h5>
-                    <p class="text-muted">Kotihawa, Bhairahawa</p>
-                    <br>
-                    <p><b>Contact no</b></p>
-                    <p class="text-muted">984524224</p>
-                    <p><b>Owner Name</b></p>
-                    <p class="text-muted">Ram Chandra Tripathi</p>
-                    <br>
-                    <b><a href="#">Find in Map</a></b>
-<?php
-    }
 }
+// :::::::::::::::::::::::::::::::::::::::::::view distribution network data::::::::::::::::::::::::::::::::::::::::::::  
+
+
+
 //.................................................................... ..........................
 //users_signup_view_data
 
-if(isset($_REQUEST["user_id"]))
-{
-    $qry1="select *from customer_data,product_portfolio,users_signup  where  customer_data.product_id=product_portfolio.id and customer_data.users_signup_id=users_signup.id and users_signup.id={$_SESSION['users_id']} ";
-    $result1=$conn->prepare($qry1);
-                                    
-    $result1->execute();
-                               
-    while($row1=$result1->fetch(PDO::FETCH_ASSOC))
-    {
-?>
-    
-                  <div class="userinfo" style="background-color: #caf0f8;padding:20px; border-radius: 10px;">
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <h5 class="font-weight-bold">Ordered Person</h5>
-                                <p class="text-muted">Ashish khanal</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="font-weight-bold">Ordered Address</h5>
-                                <p class="text-muted">Maitidevi, Kathmandu</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="font-weight-bold">Contact num</h5>
-                                <p class="text-muted">98384943</p>
-                            </div>
-                            <div class="col-md-6">
-                                <h5 class="font-weight-bold">Email</h5>
-                                <p class="text-muted">@gmailc.om</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Category</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dhan</td>
-                                <td>Dhan 24</td>
-                                <td>Rs 2300</td>
-                                <td>40 kg</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                  
-      
-                    
-
-       
-
-<?php 
-        
-                                                                
-    }
-   
-
-}
 
 ?>

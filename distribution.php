@@ -44,7 +44,7 @@ $result->execute();
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-3 dImg">
-                    <img src="images/distribution_network_images/<?php echo $row['image'] ?>" class="dImg" alt="" style="padding:10px 0 ;">
+                    <img src="images/distribution_network_images/<?php echo $row['image'] ?>" class="dImg" alt="" style="padding:10px 0 1;width:100%">
                 </div>
                 <div class="col-md-6">
                         <h3 class="HeadersB">
@@ -85,7 +85,7 @@ $result->execute();
                     </button>
                 </div>
                 <div class="modal-body" id="distribution_data">
-                    
+                   
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -118,7 +118,7 @@ $result->execute();
           
           $.ajax({
               
-              url:"admin/dataModal.php",
+              url:"distribution_dataModal.php",
               method:"POST",
               data:{distribution_id:distribution_id},
               success:function(data){

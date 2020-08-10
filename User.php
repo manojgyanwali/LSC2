@@ -1,7 +1,7 @@
 <?php
 include('includes/dbcon.php');
 session_start();
-if(isset($_SESSION['is_login']))
+if(isset($_SESSION['user_login']))
 {
   $user_phone=  $_SESSION['phone'];
 
@@ -223,21 +223,21 @@ header('location:index.php');
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script> 
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+        crossorigin="anonymous"></script>  -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>   
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>
+    <!-- <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script> 
 
     <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
     <!-- <script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script> -->
   
 <!-- <script src="../bootstrap/js/bootstrap.min.js"></script>
  
-<script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script> --> 
+<script src="https://kit.fontawesome.com/d27006f8df.js" crossorigin="anonymous"></script>  -->
 
  
 
@@ -249,7 +249,7 @@ header('location:index.php');
           
          
           $.ajax({
-              url:"dataModal.php",
+              url:"user_dataModal.php",
               method:"POST",
               data:{user_id:user_id},
               success:function(data){

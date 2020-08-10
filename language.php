@@ -1,6 +1,4 @@
-
 <?php
-
 session_start();
 if(!isset($_SESSION['lang']))
 $_SESSION['lang']= "en";
@@ -14,10 +12,7 @@ else if(isset($_REQUEST['lang']) && $_SESSION['lang'] !=$_REQUEST['lang'] && !em
     }
 
 }
-
 echo "choose language:".$_SESSION['lang'];
 
  require_once "language/". $_SESSION['lang'].".php";
-
-
 ?>

@@ -5,9 +5,6 @@ if(isset($_REQUEST['quantity']))
 {
     $qty=$_REQUEST['quantity'];
     $_SESSION['quantity']=$qty;
-    
-    
-    
 }
 else
 {
@@ -22,7 +19,6 @@ $result->bindParam(1,$_SESSION['id'],PDO::PARAM_INT);
 $result->execute();
 
 $row=$result->fetch(PDO::FETCH_ASSOC)
-
 ?>
 
 

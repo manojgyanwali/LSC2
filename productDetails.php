@@ -1,5 +1,5 @@
 <?php 
- include('header.php') ;
+include('header.php') ;
 include('includes/dbcon.php');
 $qry="select *from product_portfolio where id=?";
 $result=$conn->prepare($qry);
@@ -10,11 +10,6 @@ $_SESSION['id']=$id;
 
 $result->execute();
 $data=$result->fetch(PDO::FETCH_ASSOC);
-
-
-
-
-
 ?>
 
 

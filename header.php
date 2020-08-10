@@ -1,6 +1,5 @@
 <?php 
-
- include('language.php');
+include('language.php');
 include('includes/dbcon.php');
 $qry9="select *from category";
 $result9=$conn->prepare($qry9);
@@ -22,10 +21,6 @@ $nep_select='selected';
 $language='nep';
 
   }
-
-
-
-
 ?>
 
 
@@ -58,7 +53,7 @@ $language='nep';
                     <li><a href=""><i class="fa fa-instagram"></i></a></li>
                     <li><a href=""><i class="fa fa-twitter"></i></a></li>
 
-                    <?php if(isset($_SESSION['is_login']))
+                    <?php if(isset($_SESSION['user_login']))
                     { 
                     ?>  
                      <a href="User.php"><button class="customButtonTop"><i class="fas fa-user-circle"></i> Profile</button></a>

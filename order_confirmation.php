@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -19,7 +18,6 @@ $result->bindParam(6,$_SESSION['id']);
 $result->bindParam(7,$users_id);
 
 
-
 $name=$_REQUEST['name'];
 $address=$_REQUEST['address'];
 $phone=$_REQUEST['phone'];
@@ -32,10 +30,4 @@ if($result->execute()){
     header('location:productOrder.php');
     
 }
-
-
-
-
-
-
 ?>
