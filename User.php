@@ -15,7 +15,7 @@ else
 
  
 
-$qry="select *from users_signup where  contact_no=?   ";
+$qry="select *from users_signup where  contact_no=? ";
 $result=$conn->prepare($qry);
 $result->bindParam(1,$user_phone);
 
@@ -103,7 +103,7 @@ header('location:index.php');
                         </tr><br>
                         <tr>
                             <td width="30%"><?php echo $data['full_name'] ?></td>
-                            <td width="30%"><?php echo $data['address'] ?></td>
+                            <td width="30%"><?php echo $data['user_address'] ?></td>
                             <td width="30%"><?php echo $data['contact_no'] ?> </td>
                         </tr>
                     </table>

@@ -12,13 +12,14 @@ else
 
 if(isset($_REQUEST["user_id"]))
 {
-    $qry1="select *from customer_data,product_portfolio,users_signup  where  customer_data.product_id=product_portfolio.id and customer_data.users_signup_id=users_signup.id and users_signup.id={$_SESSION['users_id']} ";
+    $qry1="select *from customer_data,product_portfolio,users_signup  where  customer_data.product_id=product_portfolio.id and customer_data.users_signup_id=users_signup.id and users_signup.id={$_SESSION['users_id']}";
     $result1=$conn->prepare($qry1);
                                     
     $result1->execute();
                                
     while($row1=$result1->fetch(PDO::FETCH_ASSOC))
     {
+    
 ?>
     
                   <div class="userinfo" style="background-color: #caf0f8;padding:20px; border-radius: 10px;">
@@ -70,7 +71,7 @@ if(isset($_REQUEST["user_id"]))
         
                                                                 
     }
-   
+} 
 
-}
+
 ?>

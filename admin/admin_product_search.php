@@ -1,86 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['is_login']))
-{
-   echo "";
-}
-else
-{
-   header('location:index.php');
-}
-
-include('../includes/dbcon.php');
-
-if(isset($_REQUEST['add_category']))
-{
-    $category=$_REQUEST['category'];
-    if($category=="")
-    {
-        $message= '<div class="alert alert-warning col-md-6" role="alert">please fill the category name</div>';
-    }
-    else
-    {
-        $qry="insert into category (category_type) value('$category')";
-        $conn->query($qry);
-    }
-    
-    
-
-}
-
-
-if(isset($_REQUEST['delivered_order']))
-{
-     $name=$_REQUEST['name'];
-     $address=$_REQUEST['address'];
-     $contact=$_REQUEST['contact'];
-     $email=$_REQUEST['email'];
-     $quantity=$_REQUEST['quantity'];
-     $product_name=$_REQUEST['product_name'];
-     $product_image=$_REQUEST['product_image'];
-     
-    
-
-    $qry="insert into previous_customer_data (ordered_person,address,contact_no,email_address,quantity,product_name,image) values (?,?,?,?,?,?,?)";
-    $result=$conn->prepare($qry);
-    $result->bindParam(1,$name,PDO::PARAM_STR);
-    $result->bindParam(2,$address,PDO::PARAM_STR);
-    $result->bindParam(3,$contact,PDO::PARAM_INT);
-    $result->bindParam(4,$email,PDO::PARAM_STR);
-    $result->bindParam(5,$quantity,PDO::PARAM_INT);
-    $result->bindParam(6,$product_name,PDO::PARAM_STR);
-    $result->bindParam(7,$product_image,PDO::PARAM_STR);
-
-   
-
-   $row=$result->execute();
-
-  
-   if($row>0)
-   {
-       
-      $qry2="delete from customer_data where id={$_REQUEST['idd']} ";
-      $conn->query($qry2);
-   }
- 
-    
-  
-
-    
-    
-   
-     
-    
-
-}
-
-
-
-
-
-?>
-
-
+<?php include('../includes/dbcon.php');?>
 
 
 
@@ -113,113 +31,38 @@ if(isset($_REQUEST['delivered_order']))
                              
                                             <!-- pills begins from here  -->
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#category" role="tab" aria-controls="home" aria-selected="true">Add Catgory</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#product" role="tab" aria-controls="profile" aria-selected="false">Add Product</a>
-                            </li>
-                            <li class="nav-item">
+                            
+                            
+                            <li class="nav-item active">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vProduct" role="tab" aria-controls="profile" aria-selected="false">View Product</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#vOrder" role="tab" aria-controls="profile" aria-selected="false">View Orders</a>
-                            </li>
+                           
                             
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <!-- add category  -->
-                            <div class="tab-pane fade show active" id="category" role="tabpanel" aria-labelledby="home-tab">
-                                <h4 style="margin-top:30px;margin-left:20px;">Add Category</h4>
-                                <div class="contents" style="padding:20px;">
-                                    <form action="" method="POST">
-
-                                        <label for="">Add Category</label>
-                                        <input type="text" name="category" class="form-control col-md-6">
-                                        <?php if(isset($message)){ echo $message;}  ?></br>
-
-                                   
-                                        
-                                        <button type="submit" name="add_category" class="btn btn-info">Add Category</button>
-                                    </form>   
-
-                                    
-                                </div>
-                            </div>
-                            <!-- add product -->
-                            <div class="tab-pane fade" id="product" role="tabpanel" aria-labelledby="profile-tab">
-                                <h4 style="margin-top:30px;margin-left:20px;">Add Product</h4>
-                                <div class="container">
-                                    <form action="add_product.php" method="POST" enctype="multipart/form-data">
-                                        <label><b>Upload Product Highlight Image (350*350)</b></label><br>
-                                        <input type="file" name="myfile" placeholder="Choose File" required><br><br>
-
-                                        <p><b><i>Sub Images</i></b></p>
-
-                                        <div class="row">
-                                            
-                                            <div class="col-md-3">
-                                                <input type="file" name="files1" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" name="files2" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" name="files3" placeholder="Choose File">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <input type="file" name="files4" placeholder="Choose File">
-                                            </div>
-                                        </div> <br>
-
-                                        <label for="">Product Code</label>
-                                        <input type="text"  name="product_code"  class="form-control col-md-3" required > <br>
-
-                                        <label for="">Product Name</label>
-                                        <input type="text" name="product_name" class="form-control col-md-6"  required > <br>
-
-                                        <label>Select Category</label><br>
-                                       
-                                        <select  name="select" class="selectpicker">
-                                        <?php 
-                                            $qry1="select *from category";
-                                            $result1=$conn->prepare($qry1);
-                                            $result1->execute();
-                                           
-                                            while($row1=$result1->fetch(PDO::FETCH_ASSOC))
-                                            {
-                                                ?>
-                                            <option><?php echo $row1['category_type'];?></option> 
-                                                
-                                            <?php
-                                            }
-                                            ?>  
-                                              
-                                        </select> <br><br>
-                                        
-
-                                        <label for="">Product Price</label>
-                                        <input type="text" name="product_price" class="form-control col-md-3"  required ><br>
-
-                                        <label for="">Product Description</label>
-                                        <textarea class="form-control" name="product_description" id="" cols="20" rows="10"  required ></textarea>
-
-                                        
-                                        <button  type="submit" name="add_product"class="btn btn-info">Add Product</button>              
-                                    </form>
-
-                                </div>
-                                    
-                            </div>
-
-                            <!-- view product  -->
+                            
                                 <?php 
-                                    $qry2="select *from product_portfolio";
-                                    $result2=$conn->prepare($qry2);
-                                    $result2->execute();
+                                    if(isset($_REQUEST['admin_search_box']))
+                                    {    
+                                        $admin_product_search=$_REQUEST['admin_search_box'];
+                                    }
+                                    else
+                                    {
+                                        $admin_product_search="";
+                                    }
+                                       
+                                        $qry2="select *from product_portfolio where product_name like'%$admin_product_search%' or  category_name like'%$admin_product_search%'";
+                                        
+                                        $result2=$conn->prepare($qry2);
+                                        $result2->execute();
+                                        
+
+                                    
+                                
+                                   
                                 ?>
 
-                            <div class="tab-pane fade" id="vProduct" role="tabpane1" aria-labelledby="view-eomployee">
+                            <div class="tab-pane fade show active" id="vProduct" role="tabpane1" aria-labelledby="view-eomployee">
                                 <h4 style="margin-top:30px;margin-left:20px; float:left;">View Product</h4>
                                         <!-- search section  -->
                                     <div class="col-md-6" style="float:right; margin-top:30px">
@@ -246,8 +89,8 @@ if(isset($_REQUEST['delivered_order']))
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php while 
-                                                ($row2=$result2->fetch(PDO::FETCH_ASSOC)){
+                                            <?php
+                                               while($row2=$result2->fetch(PDO::FETCH_ASSOC)){
                                             ?>
                                             <tr>
                                                 <th scope="row">1</th>
@@ -295,7 +138,7 @@ if(isset($_REQUEST['delivered_order']))
                                         <div class="input-group mb-3" id="searchSection">
                                             <input type="text" name="view_search_box" class="form-control" placeholder="What are you looking for?">
                                             <div class="input-group-prepend">
-                                            <button type="submit" class="input-group-text" name="view_search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
+                                            <button type="submit" name="view_search" class="input-group-text" name="search" style="background:#2d5f2e;color:white;"><i class="fa fa-search"></i></button>
                                             </div>
                                         </div>
                                     </form>

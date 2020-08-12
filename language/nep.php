@@ -2,14 +2,18 @@
 
 
  $lang=array(
-     "home"=>"ghar",
-     "company_profile"=>"hamro barema",
-     "product_portfolio"=>"saman haru",
-     "distribution_network"=>"badne thauharu",
-     "news_and_events"=>"samachar",
-     "carrer_and_opportunities"=>"bhavisya",
-     "coverage"=>"tasbir",
-     "contact_us"=>"samparka garnus",
+     "home"=>" गृह पृषठ",
+     "company_profile"=>"हाम्रो बारेमा ",
+     "product_portfolio"=>"प्रोडुक्ट पोर्टफोलियो",
+     "distribution_network"=>"
+     वितरण नेटवर्क",
+     "news_and_events"=>"
+     समाचार र घटनाहरू",
+     "carrer_and_opportunities"=>"अवसरहरू",
+     "research_and_development"=>"
+     अनुसन्धान र विकास",
+     "contact_us"=>"
+     हामीलाई सम्पर्क गर्नुहोस",
 
 
 

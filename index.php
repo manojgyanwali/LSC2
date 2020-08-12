@@ -1,6 +1,31 @@
 <?php 
 
 include('includes/dbcon.php');
+if(isset($_REQUEST['add_message']))
+{
+
+$name=$_REQUEST['name'];
+$address=$_REQUEST['address'];
+$phone=$_REQUEST['phone'];
+$email=$_REQUEST['email'];
+$message=$_REQUEST['message'];
+
+
+$qry="insert into users_feedback(name,address,phone,email,message) values (?,?,?,?,?)";
+$result=$conn->prepare($qry);
+$result->bindParam(1,$name,PDO::PARAM_INT);
+$result->bindParam(2,$address,PDO::PARAM_STR);
+$result->bindParam(3,$phone,PDO::PARAM_STR);
+$result->bindParam(4,$email,PDO::PARAM_LOB);
+$result->bindParam(5,$message,PDO::PARAM_STR);
+
+$result->execute();
+}
+
+
+
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+include('includes/dbcon.php');
 
 $qry="select *from news_and_events ORDER BY id DESC limit 1";
 $result=$conn->prepare($qry);
@@ -358,7 +383,7 @@ $row3=$result3->fetch(PDO::FETCH_ASSOC);
                     <h1 class="HeadersB text-center">Let's Connect</h1>
                     <p class="text-center"><i>contact us</i></p>
                 </div>                    
-                    <form action="">
+                    <form action="" method="POST">
                     
                         <div class="form-row">
                            <div class="form-group col-md-6">

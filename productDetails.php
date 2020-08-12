@@ -82,14 +82,31 @@ $data=$result->fetch(PDO::FETCH_ASSOC);
                     <div class="row align-items-start">
                        
                             <div class="col-md-4 QTY ">
+                           
+
+                                
                                 <form action="productOrder.php" method="POST">
                                     <h5 style="float:left;Padding-right:10px;">QTY</h5>
                                     <input type="text" name="quantity" class="form-control col-md-6">
                             </div>
+                                            <?php if(isset($_SESSION['user_login']))
+                                                { 
+                                            ?> 
                                     <div class="col-md-4">
                                         <button type="submit" class="orderBtn">Order Now</button>
                                     </div>
+                                            <?php }
+                                            else
+                                                {
+                                            ?>
+                                            <div class="col-md-4">
+                                               <a href="login.php"><button type="button" class="orderBtn">Order Now</button></a>
+                                            </div>
+                                            <?php } ?>
                                 </form>
+                                    
+                                        
+                                   
                         <div class="col-md-4 ">
                             <button class="cartBtn">
                             Add to Cart

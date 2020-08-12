@@ -138,7 +138,7 @@ $language='nep';
                         <a class="nav-link" href="career.php"style="color:white;"><?php echo $lang['carrer_and_opportunities'] ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Research.php"style="color:white;">Research & Development</a>
+                        <a class="nav-link" href="Research.php"style="color:white;"><?php echo $lang['research_and_development'] ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php"style="color:white;"><?php echo $lang['contact_us'] ?></a>

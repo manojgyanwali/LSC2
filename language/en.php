@@ -8,7 +8,7 @@
      "distribution_network"=>"Distribution Network",
      "news_and_events"=>"News & Events",
      "carrer_and_opportunities"=>"Career Opportunity",
-     "coverage"=>"coverage",
+     "research_and_development"=>"research and development",
      "contact_us"=>"Contact us",
 
 
